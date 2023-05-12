@@ -1,0 +1,119 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Ajouter une entreprise" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="mb-4">Les champs avec (<span style="color:red">*</span>)  sont obligatoires</h6>
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <form action="#">
+                  <div class="mb-4">
+                    <label>Nature de société <span style="color:red">*</span></label>
+                    <select class="form-select border border-success">
+                    <option selected> veuillez sélectionner une nature de société</option>
+                      <option value="sa">SA</option>
+                      <option value="sarl">SARL</option>
+                      <option value="gie">GIE</option>
+                      <option value="sas">SAS</option>
+                      <option value="sgi">SGI</option>
+                      <option value="individuel">INDIVIDUEL</option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <label>Raison sociale <span style="color:red">*</span></label>
+                    <input type="text" class="form-control border border-success" placeholder="Veuillez saisir la raison sociale du client">
+
+                  </div>
+                  <div class="mb-4">
+                    <label>Représentant légal <span style="color:red">*</span></label>
+                    <input type="email" class="form-control border border-success"  placeholder="Veuillez saisir le nom du représentant légal">
+
+                  </div>
+
+                  <div class="mb-4">
+                    <label>Numéro de régistre de commerce <span style="color:red">*</span></label>
+                    <input type="text" class="form-control border border-success" placeholder="Veuillez saisir le numéro de régistre de commerce">
+                  </div>
+                  <div class="mb-4">
+                    <label>Téléphone <span style="color:red">*</span></label>
+                    <input type="tel" class="form-control border border-success" placeholder="Veuillez saisir le contact du client">
+                  </div>
+                  <div class="mb-4">
+                    <label>Pays <span style="color:red">*</span></label>
+                    <select class="form-select border border-success">
+                      <option selected>Sélectionner un pays</option>
+                      <option value="côte d'Ivoire">Côte d'Ivoire</option>
+                    </select>
+
+                  </div>
+                  <div class="mb-4">
+                    <label>Ville <span style="color:red">*</span></label>
+                    <select class="form-select border border-success">
+                      <option selected>Sélectionner une ville</option>
+                      <option value="abidjan">Abidjan</option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <label>Siège social <span style="color:red">*</span></label>
+                    <input type="text" class="form-control border border-success" placeholder="Veuillez saisir le siège social du client">
+                  </div>
+
+                </form>
+              </div> <!-- end col -->
+              <div class="col-md-6">
+                <form action="#">
+
+
+                  <div class="mb-4">
+                    <label>Sigle <span style="color:red">*</span></label>
+                    <input type="text" class="form-control border border-success" placeholder="Veuillez saisir le sigle du client">
+
+                  </div>
+                  <div class="mb-4">
+                    <label>Adresse email<span style="color:red">*</span></label>
+                    <input type="email" class="form-control border border-success" placeholder="Veuillez saisir l'email du client">
+                  </div>
+                  <div class="mb-4">
+                    <label>Numéro DFE</label>
+                    <input type="text" class="form-control border border-success" placeholder="Veuillez saisir le numéro DFE">
+                  </div>
+                  <div class="mb-4">
+                    <label>Fixe</label>
+                    <input type="tel" class="form-control border border-success" placeholder="Veuillez saisir le fixe du client">
+
+                  </div>
+
+
+                  <div class="mb-4">
+                    <label>Photo <span style="color:red">*</span></label>
+                    <dropzone class="dropzone"></dropzone>
+                  </div>
+
+                </form>
+
+              </div> <!-- end col -->
+              <div class="row">
+                <div class="col-md-10">
+                </div>
+                <div class="col-md-1">
+                  <button type="reset" class="btn btn-secondary">Annuler</button>
+                </div>
+                <div class="col-md-1">
+                <button type="submit" class="btn btn-success">Valider</button>
+              </div>
+            </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

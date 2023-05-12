@@ -1,0 +1,119 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-page-title title="Ajouter un client physique" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="mb-4">Les champs avec(<span style="color:red">*</span>)  sont obligatoires</h6>
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <form action="#">
+                  <div class="mb-4">
+                    <label>Nom <span style="color:red">*</span></label>
+                    <input type="text" id="nomclient" name="nomclient" class="form-control border border-success"  placeholder="Veuillez saisir le nom du client">
+                  </div>
+                  <div class="mb-4">
+                    <label>Prénoms <span style="color:red">*</span></label>
+                    <input type="text" id="prenomclient" name="prenomclient" class="form-control border border-success" placeholder="Veuillez saisir le prénom du client">
+
+                  </div>
+                  <div class="mb-4">
+                    <label>Adresse email <span style="color:red">*</span></label>
+                    <input type="email" class="form-control border border-success"  placeholder="Veuillez saisir le prénom du client">
+
+                  </div>
+
+                  <div class="mb-4">
+                    <label>Téléphone <span style="color:red">*</span></label>
+                    <input type="tel" id="telclient" name="telclient" class="form-control border border-success" placeholder="Veuillez saisir le contact du client">
+                  </div>
+                  <div class="mb-4">
+                    <label>Pays <span style="color:red">*</span></label>
+                    <select id="paysclient" name="paysclient" class="form-select border border-success">
+                      <option selected>Sélectionner un pays</option>
+                      <option value="côte d'Ivoire">Côte d'Ivoire</option>
+                    </select>
+
+                  </div>
+                  <div class="mb-4">
+                    <label>Ville <span style="color:red">*</span></label>
+                    <select id="villeclient" name="villeclient" class="form-select border border-success">
+                      <option selected>Sélectionner une ville</option>
+                      <option value="abidjan">Abidjan</option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <label>Adresse <span style="color:red">*</span></label>
+                    <input type="text" id="adresseclient" name="adresseclient" class="form-control border border-success" placeholder="Veuillez saisir l'adresse du client">
+                  </div>
+                  <div class="mb-4">
+                    <label>Situation matrimoniale <span style="color:red">*</span></label>
+                    <select id="smclient" name="smclient" class="form-select border border-success">
+                    <option selected>Sélectionner une situation matrimoniale</option>
+                      <option value="celibataire">Célibataire</option>
+                      <option value="marie">Marié</option>
+                      <option value="veuf">Veuf</option>
+                      <option value="divorce">Divorce</option>
+                    </select>
+                  </div>
+
+
+                </form>
+              </div> <!-- end col -->
+              <div class="col-md-6">
+                <form action="#">
+                  <div class="mb-4">
+                    <label>Profession <span style="color:red">*</span></label>
+                    <input type="text" id="profclient" name="profclient" class="form-control border border-success" placeholder="Veuillez saisir la profession du client" accept="*">
+
+                  </div>
+                  <div class="mb-4">
+                    <label>Lieu de travail <span style="color:red">*</span></label>
+                    <input type="text" id="ltclient" name="ltclient" class="form-control border border-success" placeholder="Veuillez saisir le lieu de travail du client" accept="*">
+                  </div>
+                  <div class="mb-4">
+                    <label>Fixe</label>
+                    <input type="tel" id="fixeclient" name="fixeclient" class="form-control border border-success" placeholder="Veuillez saisir le fixe du client">
+
+                  </div>
+                  <div class="mb-4">
+                    <label>Date de naissance <span style="color:red">*</span></label>
+                    <input type="date" class="form-control border border-success" placeholder="Veuillez sélectionner la date">
+                  </div>
+                  <div class="mb-4">
+                    <label>Boîte postale</label>
+                    <input type="text" class="form-control border border-success" placeholder="Veuillez saisir la boîte postale du client">
+                  </div>
+                  <div class="mb-4">
+                    <label>Photo <span style="color:red">*</span></label>
+                    <dropzone class="dropzone"></dropzone>
+                  </div>
+
+                </form>
+                
+
+              </div> <!-- end col -->
+              <div class="row">
+                <div class="col-md-10">
+                </div>
+                <div class="col-md-1">
+                  <button type="reset" class="btn btn-secondary">Annuler</button>
+                </div>
+                <div class="col-md-1">
+                <button type="submit" class="btn btn-success">Valider</button>
+              </div>
+            </div>
+            
+            </div>        
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
