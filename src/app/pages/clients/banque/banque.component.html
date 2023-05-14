@@ -1,101 +1,213 @@
 <div class="container-fluid">
-
   <!-- start page title -->
-  <app-page-title title="Ajouter une banque" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <app-page-title
+    title="Formulaire banque"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
   <!-- end page title -->
   <div class="row">
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
-          <h6 class="mb-4">Les champs avec (<span style="color:red">*</span>)  sont obligatoires</h6>
-          <form>
-            <div class="row">
-              <div class="col-md-6">
-                <form action="#">
+          <h6 class="mb-4">
+            Les champs avec(<span style="color: red">*</span>) sont obligatoires
+          </h6>
 
-                  <div class="mb-4">
-                    <label>Sigle <span style="color:red">*</span></label>
-                    <input type="text" id="siglebanque" name="siglebanque" class="form-control border border-success" placeholder="Veuillez saisir le sigle du client">
+          <div class="row">
+            <form action="#" [formGroup]="banqueForm" (ngSubmit)="submit()">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label>Sigle <span style="color: red">*</span></label>
+                  <input
+                    type="text"
+                    formControlName="sigle"
+                    id="sigleBanque"
+                    name="sigleBanque"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le sigle du client"
+                  />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label>Raison sociale<span style="color: red">*</span></label>
+                  <input
+                    type="text"
+                    id="raisonSocial"
+                    formControlName="raisonSociale"
+                    name="raisonSocial"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir la raison sociale du client"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label
+                    >Numéro du régistre de commerce
+                    <span style="color: red">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="rcBanque"
+                    formControlName="numRCCM"
+                    name="rcBanque"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le numéro du régistre de commerce"
+                  />
+                </div>
 
-                  </div>
-                  <div class="mb-4">
-                    <label>Raison sociale <span style="color:red">*</span></label>
-                    <input type="text" id="rsbanque" name="rsbanque" class="form-control border border-success"  placeholder="Veuillez saisir la raison sociale du client">
-                  </div>
-
-                  <div class="mb-4">
-                    <label>Numéro de régistre de commerce <span style="color:red">*</span></label>
-                    <input type="text" id="nrcbanque" name="nrcbanque" class="form-control border border-success" placeholder="Veuillez saisir le numéro de régistre de commerce">
-                  </div>
-                  <div class="mb-4">
-                    <label>Téléphone <span style="color:red">*</span></label>
-                    <input type="tel" id="telbanque" name="telbanque" class="form-control border border-success" placeholder="Veuillez saisir le contact du client">
-                  </div>
-                  <div class="mb-4">
-                    <label>Nom complet du dirigeant <span style="color:red">*</span></label>
-                    <input type="text" id="dirigeantB" name="dirigeantB" class="form-control border border-success" placeholder="Veuillez saisir le nom complet du dirigeant">
-                  </div>
-                  <div class="mb-4">
-                    <label>Pays <span style="color:red">*</span></label>
-                    <select id="paysbanque" name="paysbanque" class="form-select border border-success">
-                      <option selected>Sélectionner un pays</option>
-                      <option value="côte d'Ivoire">Côte d'Ivoire</option>
-                    </select>
-
-                  </div>
-                  <div class="mb-4">
-                    <label>Ville <span style="color:red">*</span></label>
-                    <select id="villebanque" name="villebanque" class="form-select border border-success">
-                      <option selected>Sélectionner une ville</option>
-                      <option value="abidjan">Abidjan</option>
-                    </select>
-                  </div>
-
-
-                </form>
-                
-              </div> <!-- end col -->
-              <div class="col-md-6">
-                <form action="#">
-
-                  <div class="mb-4">
-                    <label>Adresse <span style="color:red">*</span></label>
-                    <input type="text" id="adressbanque" name="adressbanque" class="form-control border border-success" placeholder="Veuillez saisir l'adresse du client">
-                  </div>
-                  <div class="mb-4">
-                    <label>Fixe <span style="color:red">*</span></label>
-                    <input type="tel" class="form-control border border-success" placeholder="Veuillez saisir le fixe du client">
-                  </div>
-
-                  <div class="mb-4">
-                    <label>Numéro DFE <span style="color:red">*</span></label>
-                    <input type="text" class="form-control border border-success" placeholder="Veuillez saisir le numéro du DFE">
-                 </div>
-                  <div class="mb-4">
-                    <label>Logo <span style="color:red">*</span></label>
-                    <dropzone class="dropzone"></dropzone>
-                  </div>
-                </form>
-                
-              </div> <!-- end col -->
+                <div class="col-md-6 mb-4">
+                  <label>Numéro DFE<span style="color: red">*</span></label>
+                  <input
+                    type="text"
+                    id="dfeBanque"
+                    formControlName="dfe"
+                    name="dfeBanque"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le numéro DFE"
+                  />
+                </div>
+              </div>
 
               <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-6 mb-4">
+                  <label
+                    >Nom complet du dirigeant
+                    <span style="color: red">*</span></label
+                  >
+                  <!--<input
+                    type="email"
+                    id="emailBanque"
+                    formControlName="activite"
+                    name="emailBanque"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir l'adresse email du client"
+                  />-->
+                  <input
+                    type="text"
+                    id="nomDirigeant"
+                    formControlName="nomDirigeant"
+                    name="nomDirigeant"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le nom complet du dirigeant"
+                  />
                 </div>
-                <div class="col-md-1">
-                  <button type="reset" class="btn btn-secondary">Annuler</button>
-                </div>
-                <div class="col-md-1">
-                <button type="submit" class="btn btn-success">Valider</button>
-              </div>
-            </div>
-            </div>
 
-          </form>
+                <div class="col-md-6 mb-4">
+                  <label>Téléphone <span style="color: red">*</span></label>
+                  <input
+                    type="tel"
+                    id="telBanque"
+                    formControlName="fax"
+                    name="telBanque"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le numéro de téléphone du client"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label>Fixe <span style="color: red">*</span></label>
+                  <input
+                    type="tel"
+                    id="fixeBanque"
+                    formControlName="fixe"
+                    name="fixeBanque"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le fixe du client"
+                  />
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <label>Fixe <span style="color: red">*</span></label>
+                  <input
+                    type="tel"
+                    id="fixeBanque"
+                    formControlName="fixe"
+                    name="fixeBanque"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le fixe du client"
+                  />
+                </div>
+              </div>
+              <div class="row" formGroupName="adresse">
+                <div class="adresse col-md-6 mb-4">
+                  <label for="adresse1">Adresse 1</label>
+                  <input
+                    type="text"
+                    class="form-control border border-success"
+                    formControlName="adresse1"
+                    id="adresse1"
+                    placeholder="1234 Main St"
+                  />
+                </div>
+                <div class="adresse col-md-6 mb-4">
+                  <label for="adresse2">Adresse 2</label>
+                  <input
+                    type="text"
+                    class="form-control border border-success"
+                    formControlName="adresse2"
+                    id="adresse2"
+                    placeholder="Apartment, studio"
+                  />
+                </div>
+                <div class="class col-md-6">
+                  <div class="adresse col-md-6 mb-4">
+                    <label for="codePostal">Code postal</label>
+                    <input
+                      type="text"
+                      class="form-control border border-success"
+                      id="codePostal"
+                      formControlName="codePostal"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="adresse col-md-6 mb-4">
+                    <label for="villeClient">Ville</label>
+                    <input
+                      type="text"
+                      class="form-control border border-success"
+                      formControlName="ville"
+                      id="villeClient"
+                    />
+                  </div>
+                  <div class="adresse col-md-6 mb-4">
+                    <label for="paysClient">Pays</label>
+                    <select
+                      id="paysClient"
+                      formControlName="pays"
+                      class="form-control border border-success"
+                    >
+                      <option selected>Sélectionner un pays</option>
+                      <option>Côte d'Ivoire</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 mb-4">
+                  <label>Logo<span style="color: red">*</span></label>
+                  <dropzone class="dropzone border" formControlName="logo">
+                  </dropzone>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-1">
+                  <button type="reset" class="btn btn-secondary">
+                    Annuler
+                  </button>
+                </div>
+                <div class="col-md-1">
+                  <button type="submit" class="btn btn-success">Valider</button>
+                </div>
+                <div class="col-md-5"></div>
+              </div>
+            </form>
+            <p>{{ banqueForm.status }}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
-
