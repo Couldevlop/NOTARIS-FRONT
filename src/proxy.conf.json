@@ -1,0 +1,11 @@
+{
+  "/notaris": {
+    "target": "http://localhost:8086/",
+    "changeOrigin": false,
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/notaris": "/notaris/v1"
+    }
+  }
+}
