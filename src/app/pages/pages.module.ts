@@ -41,6 +41,7 @@ import { MapsModule } from "./maps/maps.module";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ChatComponent } from "./chat/chat.component";
 
+
 import { FilemanagerComponent } from "./filemanager/filemanager.component";
 import { DropzoneModule } from "ngx-dropzone-wrapper";
 import { PhysiqueComponent } from "./clients/physique/physique.component";
@@ -70,6 +71,25 @@ import { FicheReceptionComponent } from "./fichereception/fiche-reception/fiche-
     ActeImmobilierComponent,
     FicheReceptionComponent,
   ],
+
+import { FilemanagerComponent } from './filemanager/filemanager.component';
+import { DropzoneModule } from 'ngx-dropzone-wrapper';
+import { PhysiqueComponent } from './clients/physique/physique.component';
+import { BanqueComponent } from './clients/banque/banque.component';
+import { EntrepriseComponent } from './clients/entreprise/entreprise.component';
+import { SuccessionComponent } from './liquidation/succession/succession.component';
+import { CommunauteComponent } from './liquidation/communaute/communaute.component';
+import { ConstitutionSocieteComponent } from './societe/constitution-societe/constitution-societe.component';
+import { ModificationSocieteComponent } from './societe/modification-societe/modification-societe.component';
+import { OuvertureCreditComponent } from './ouvertcredit/ouverture-credit/ouverture-credit.component';
+import { ActeImmobilierComponent } from './acteimmobilier/acte-immobilier/acte-immobilier.component';
+import { FicheReceptionComponent } from './fichereception/fiche-reception/fiche-reception.component';
+import { ListeBanqueComponent } from './clients/liste-banque/liste-banque.component';
+import { DataService } from './clients/liste-banque/data.service';
+
+@NgModule({
+  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent, PhysiqueComponent, BanqueComponent, EntrepriseComponent, SuccessionComponent, CommunauteComponent, ConstitutionSocieteComponent, ModificationSocieteComponent, OuvertureCreditComponent, ActeImmobilierComponent, FicheReceptionComponent, ListeBanqueComponent],
+
   imports: [
     CommonModule,
     FormsModule,
@@ -106,5 +126,6 @@ import { FicheReceptionComponent } from "./fichereception/fiche-reception/fiche-
     LightboxModule,
     PickerModule,
   ],
+  providers: [DataService],
 })
 export class PagesModule {}
