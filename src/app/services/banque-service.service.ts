@@ -11,8 +11,8 @@ const banqueApiUrl = "http://localhost:8086/notaris/v1/banque";
 export class BanqueServiceService {
   constructor(private http: HttpClient) {}
 
-  public create(banque: any): Observable<Banque> {
-    return this.http.post(banqueApiUrl, banque);
+  public create(Banque: any): Observable<Banque> {
+    return this.http.post(banqueApiUrl, Banque);
   }
 
   public findById(id: number): Observable<Banque> {
