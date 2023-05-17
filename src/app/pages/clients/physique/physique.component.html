@@ -1,126 +1,227 @@
 <div class="container-fluid">
-
   <!-- start page title -->
-  <app-page-title title="Formulaire du client physique" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <app-page-title
+    title="Formulaire du client physique"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
   <!-- end page title -->
   <div class="row">
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
-          <h6 class="mb-4">Les champs avec(<span style="color:red">*</span>)  sont obligatoires</h6>
+          <h6 class="mb-4">
+            Les champs avec(<span style="color: red">*</span>) sont obligatoires
+          </h6>
 
-            <div class="row">
-                <form action="#">
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                    <label>Nom <span style="color:red">*</span></label>
-                    <input type="text" id="nomClient" name="nomClient" class="form-control border border-success"  placeholder="Veuillez saisir le nom du client">
-                  </div>
-                  <div class="col-md-6 mb-4">
-                    <label>Prénoms <span style="color:red">*</span></label>
-                    <input type="text" id="prenomClient" name="prenomClient" class="form-control border border-success" placeholder="Veuillez saisir le prénom du client">
-                 </div>
+          <div class="row">
+            <form [formGroup]="physiqueForm" (ngSubmit)="submit()">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label>Nom <span style="color: red">*</span></label>
+                  <input
+                    type="text"
+                    id="nomClient"
+                    formControlName="nom"
+                    name="nomClient"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le nom du client"
+                  />
                 </div>
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-                  <label>Adresse email <span style="color:red">*</span></label>
-                  <input type="email" id="emailClient" name="emailClient" class="form-control border border-success"  placeholder="Veuillez saisir le prénom du client">
-
+                <div class="col-md-6 mb-4">
+                  <label>Prénoms <span style="color: red">*</span></label>
+                  <input
+                    type="text"
+                    id="prenomClient"
+                    formControlName="prenom"
+                    name="prenomClient"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le prénom du client"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label>Adresse email <span style="color: red">*</span></label>
+                  <input
+                    type="email"
+                    id="emailClient"
+                    formControlName="email"
+                    name="emailClient"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le prénom du client"
+                  />
                 </div>
 
                 <div class="col-md-6 mb-4">
-                  <label>Téléphone <span style="color:red">*</span></label>
-                  <input type="tel" id="telClient" name="telClient" class="form-control border border-success" placeholder="Veuillez saisir le contact du client">
+                  <label>Téléphone <span style="color: red">*</span></label>
+                  <input
+                    type="tel"
+                    id="telClient"
+                    formControlName="mobile"
+                    name="telClient"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le contact du client"
+                  />
+                </div>
+              </div>
+
+              <div class="row" formGroupName="adresse">
+                <div class="adresse col-md-6 mb-4">
+                  <label for="adresse1">Adresse 1</label>
+                  <input
+                    type="text"
+                    formControlName="adresse1"
+                    class="form-control border border-success"
+                    id="adresse1"
+                    placeholder="1234 Main St"
+                  />
+                </div>
+                <div class="adresse col-md-6 mb-4">
+                  <label for="adresse2">Adresse 2</label>
+                  <input
+                    type="text"
+                    formControlName="adresse2"
+                    class="form-control border border-success"
+                    id="adresse2"
+                    placeholder="Apartment, studio"
+                  />
+                </div>
+                <div class="row">
+                  <div class="adresse col-md-6 mb-4">
+                    <label for="ville">Ville</label>
+                    <input
+                      type="text"
+                      formControlName="ville"
+                      class="form-control border border-success"
+                      id="ville"
+                      placeholder="Paris"
+                    />
+                  </div>
+                  <div class="adresse col-md-6 mb-4">
+                    <label for="paysClient">Pays</label>
+                    <select
+                      id="paysClient"
+                      formControlName="pays"
+                      class="form-control border border-success"
+                    >
+                      <option selected>Sélectionner un pays</option>
+                      <option>Côte d'Ivoire</option>
+                      <option>Burkina-Fasso</option>
+                      <option>Mali</option>
+                      <option>Sénegale</option>
+                      <option>Benin</option>
+                      <option>Guinée</option>
+                    </select>
+                  </div>
+                  <div class="adresse col-md-2 mb-4">
+                    <label for="codePostal">Code postal</label>
+                    <input
+                      type="text"
+                      formControlName="codePostal"
+                      class="form-control border border-success"
+                      id="codePostal"
+                    />
+                  </div>
                 </div>
               </div>
 
               <div class="row">
-                <div class="adresse col-md-6 mb-4">
-                <label for="adresse1">Adresse 1</label>
-                <input type="text" class="form-control border border-success" id="adresse1" placeholder="1234 Main St">
-              </div>
-              <div class="adresse col-md-6 mb-4">
-                <label for="adresse2">Adresse 2</label>
-                <input type="text" class="form-control border border-success" id="adresse2" placeholder="Apartment, studio">
-              </div>
-              <div class="row">
-                <div class="adresse col-md-6 mb-4">
-                  <label for="villeClient">Ville</label>
-                  <input type="text" class="form-control border border-success" id="villeClient">
-                </div>
-                <div class="adresse col-md-4 mb-4">
-                  <label for="paysClient">Pays</label>
-                  <select id="paysClient" class="form-control border border-success">
-                    <option selected>Sélectionner un pays</option>
-                    <option>...</option>
+                <div class="col-md-6 mb-4">
+                  <label
+                    >Situation matrimoniale
+                    <span style="color: red">*</span></label
+                  >
+                  <select
+                    id="smClient"
+                    formControlName="situationMatrimoniale"
+                    name="smClient"
+                    class="form-select border border-success"
+                  >
+                    <option selected>
+                      Sélectionner une situation matrimoniale
+                    </option>
+                    <option value="celibataire">Célibataire</option>
+                    <option value="marie">Marié</option>
+                    <option value="veuf">Veuf</option>
+                    <option value="divorce">Divorce</option>
                   </select>
                 </div>
-                <div class="adresse col-md-2 mb-4">
-                  <label for="codePostal">Code postal</label>
-                  <input type="text" class="form-control border border-success" id="codePostal">
+                <div class="col-md-6 mb-4">
+                  <label>Profession <span style="color: red">*</span></label>
+                  <input
+                    type="text"
+                    formControlName="profession"
+                    id="profClient"
+                    name="profClient"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir la profession du client"
+                    accept="*"
+                  />
                 </div>
               </div>
-            </div>
 
-          <div class="row">
-            <div class="col-md-6 mb-4">
-              <label>Situation matrimoniale <span style="color:red">*</span></label>
-              <select id="smClient" name="smClient" class="form-select border border-success">
-              <option selected>Sélectionner une situation matrimoniale</option>
-                <option value="celibataire">Célibataire</option>
-                <option value="marie">Marié</option>
-                <option value="veuf">Veuf</option>
-                <option value="divorce">Divorce</option>
-              </select>
-            </div>
-            <div class="col-md-6 mb-4">
-              <label>Profession <span style="color:red">*</span></label>
-              <input type="text" id="profClient" name="profClient" class="form-control border border-success" placeholder="Veuillez saisir la profession du client" accept="*">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label
+                    >Lieu de travail <span style="color: red">*</span></label
+                  >
+                  <input
+                    type="text"
+                    formControlName="lieuDeTravail"
+                    id="ltClient"
+                    name="ltClient"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le lieu de travail du client"
+                    accept="*"
+                  />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label>Fixe</label>
+                  <input
+                    type="tel"
+                    id="fixeClient"
+                    formControlName="fixe"
+                    name="fixeClient"
+                    class="form-control border border-success"
+                    placeholder="Veuillez saisir le fixe du client"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label
+                    >Date de naissance <span style="color: red">*</span></label
+                  >
+                  <input
+                    type="date"
+                    formControlName="dateNaissance"
+                    class="form-control border border-success"
+                    placeholder="Veuillez sélectionner la date"
+                  />
+                </div>
 
-            </div>
+                <div class="col-md-6 mb-4">
+                  <label>Photo <span style="color: red">*</span></label>
+                  <dropzone class="dropzone border"></dropzone>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-1">
+                  <button type="reset" class="btn btn-secondary">
+                    Annuler
+                  </button>
+                </div>
+                <div class="col-md-1">
+                  <button type="submit" class="btn btn-success">Valider</button>
+                </div>
+                <div class="col-md-5"></div>
+              </div>
+            </form>
           </div>
-
-<div class="row">
-  <div class="col-md-6 mb-4">
-  <label>Lieu de travail <span style="color:red">*</span></label>
-  <input type="text" id="ltClient" name="ltClient" class="form-control border border-success" placeholder="Veuillez saisir le lieu de travail du client" accept="*">
-</div>
-<div class="col-md-6 mb-4">
-  <label>Fixe</label>
-  <input type="tel" id="fixeClient" name="fixeClient" class="form-control border border-success" placeholder="Veuillez saisir le fixe du client">
-
-</div>
-</div>
-<div class="row">
-  <div class="col-md-6 mb-4">
-    <label>Date de naissance <span style="color:red">*</span></label>
-    <input type="date" class="form-control border border-success" placeholder="Veuillez sélectionner la date">
-  </div>
-
-  <div class="col-md-6 mb-4">
-    <label>Photo <span style="color:red">*</span></label>
-    <dropzone class="dropzone border"></dropzone>
-  </div>
-
-</div>
-
-
-<div class="row">
-  <div class="col-md-5">
-  </div>
-  <div class="col-md-1">
-    <button type="reset" class="btn btn-secondary">Annuler</button>
-  </div>
-  <div class="col-md-1">
-    <button type="submit" class="btn btn-success">Valider</button>
-  </div>
-  <div class="col-md-5">
-  </div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
