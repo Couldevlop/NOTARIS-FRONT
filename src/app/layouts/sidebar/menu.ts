@@ -32,7 +32,7 @@ export const MENU: MenuItem[] = [
             {
                 id: 6,
                 label: 'Banque',
-                link: '/banque',
+                link: '/liste-banque',
                 parentId: 2
             },
         ]

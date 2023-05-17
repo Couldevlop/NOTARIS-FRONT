@@ -7,6 +7,7 @@ import { FilemanagerComponent } from './filemanager/filemanager.component';
 import { PhysiqueComponent } from './clients/physique/physique.component';
 import { EntrepriseComponent } from './clients/entreprise/entreprise.component';
 import { BanqueComponent } from './clients/banque/banque.component';
+import { ListeBanqueComponent } from './clients/liste-banque/liste-banque.component';
 import { SuccessionComponent } from './liquidation/succession/succession.component';
 import { CommunauteComponent } from './liquidation/communaute/communaute.component';
 import { ConstitutionSocieteComponent } from './societe/constitution-societe/constitution-societe.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'physique', component: PhysiqueComponent},
   { path: 'entreprise', component: EntrepriseComponent},
   { path: 'banque', component: BanqueComponent},
+  { path: 'liste-banque', component: ListeBanqueComponent},
   { path: 'succession', component: SuccessionComponent},
   { path: 'communaute', component: CommunauteComponent},
   { path: 'constitution-societe', component: ConstitutionSocieteComponent},
