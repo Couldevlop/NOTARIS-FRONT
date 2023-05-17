@@ -53,9 +53,11 @@ import { ModificationSocieteComponent } from './societe/modification-societe/mod
 import { OuvertureCreditComponent } from './ouvertcredit/ouverture-credit/ouverture-credit.component';
 import { ActeImmobilierComponent } from './acteimmobilier/acte-immobilier/acte-immobilier.component';
 import { FicheReceptionComponent } from './fichereception/fiche-reception/fiche-reception.component';
+import { ListeBanqueComponent } from './clients/liste-banque/liste-banque.component';
+import { DataService } from './clients/liste-banque/data.service';
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent, PhysiqueComponent, BanqueComponent, EntrepriseComponent, SuccessionComponent, CommunauteComponent, ConstitutionSocieteComponent, ModificationSocieteComponent, OuvertureCreditComponent, ActeImmobilierComponent, FicheReceptionComponent],
+  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent, PhysiqueComponent, BanqueComponent, EntrepriseComponent, SuccessionComponent, CommunauteComponent, ConstitutionSocieteComponent, ModificationSocieteComponent, OuvertureCreditComponent, ActeImmobilierComponent, FicheReceptionComponent, ListeBanqueComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -92,5 +94,6 @@ import { FicheReceptionComponent } from './fichereception/fiche-reception/fiche-
     LightboxModule,
     PickerModule
   ],
+  providers: [DataService],
 })
 export class PagesModule { }
