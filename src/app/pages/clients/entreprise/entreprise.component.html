@@ -94,9 +94,6 @@
                       placeholder="Apartment, studio"
                     />
                   </div>
-
-                  <div class="row">
-
                       <div class="adresse col-md-2 mb-4">
                         <label for="codePostal">Code postal</label>
                         <input
@@ -126,9 +123,6 @@
                           <option>Côte d'Ivoire</option>
                         </select>
                       </div>
-                    </div>
-
-
                   </div>
 
 
@@ -141,21 +135,25 @@
 
                   <div class="col-md-6 mb-4">
                     <label>Photo <span style="color:red">*</span></label>
-                    <dropzone class="dropzone"></dropzone>
+                    <input type="file" id="photo" class="form-control" id="undefined" multiple="" name="photo">
+                    <!-- <dropzone class="dropzone"></dropzone> -->
                   </div>
                 </div>
 
                   <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-1">
-                      <button type="reset" class="btn btn-secondary">
-                        Annuler
+                    <div class="col-md-4 mb-4"></div>
+
+                    <div class="col-md-2 mb-4">
+                      <button type="submit" class="btn btn-success">
+                        Valider
                       </button>
                     </div>
-                    <div class="col-md-1">
-                      <button type="submit" class="btn btn-success">Valider</button>
+                    <div class="col-md-2 mb-4">
+                      <button type="reset" class="btn btn-outline-secondary">
+                       Annuler
+                      </button>
                     </div>
-                    <div class="col-md-5"></div>
+                    <div class="col-md-4 mb-4"></div>
                   </div>
 
           </form>

@@ -43,24 +43,22 @@
                 <label for="adresse2">Adresse 2</label>
                 <input type="text" class="form-control border border-success" id="adresse2" placeholder="Apartment, studio">
               </div>
-              <div class="row">
-                <div class="adresse col-md-6 mb-4">
+              <div class="adresse col-md-2 mb-4">
+                <label for="codePostal">Code postal</label>
+                <input type="text" class="form-control border border-success" id="codePostal">
+              </div>
+                <div class="adresse col-md-4 mb-4">
                   <label for="villeClient">Ville</label>
                   <input type="text" class="form-control border border-success" id="villeClient">
                 </div>
-                <div class="adresse col-md-4 mb-4">
+                <div class="adresse col-md-6 mb-4">
                   <label for="paysClient">Pays</label>
                   <select id="paysClient" class="form-control border border-success">
                     <option selected>Sélectionner un pays</option>
                     <option>...</option>
                   </select>
                 </div>
-                <div class="adresse col-md-2 mb-4">
-                  <label for="codePostal">Code postal</label>
-                  <input type="text" class="form-control border border-success" id="codePostal">
-                </div>
-              </div>
-            </div>
+             </div>
 
           <div class="row">
             <div class="col-md-6 mb-4">
@@ -99,23 +97,27 @@
 
   <div class="col-md-6 mb-4">
     <label>Photo <span style="color:red">*</span></label>
-    <dropzone class="dropzone border"></dropzone>
+    <input type="file" id="photo" class="form-control" id="undefined" multiple="" name="photo">
+    <!-- <dropzone class="dropzone"></dropzone> -->
   </div>
 
 </div>
 
 
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-4 mb-4"></div>
+
+  <div class="col-md-2 mb-4">
+    <button type="submit" class="btn btn-success">
+      Valider
+    </button>
   </div>
-  <div class="col-md-1">
-    <button type="reset" class="btn btn-secondary">Annuler</button>
+  <div class="col-md-2 mb-4">
+    <button type="reset" class="btn btn-outline-secondary">
+     Annuler
+    </button>
   </div>
-  <div class="col-md-1">
-    <button type="submit" class="btn btn-success">Valider</button>
-  </div>
-  <div class="col-md-5">
-  </div>
+  <div class="col-md-4 mb-4"></div>
 </div>
 </form>
 </div>

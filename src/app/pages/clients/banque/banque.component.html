@@ -117,9 +117,8 @@
                     placeholder="Veuillez saisir le numéro de téléphone du client"
                   />
                 </div>
-
-
               </div>
+
               <div class="row" formGroupName="adresse">
                 <div class="adresse col-md-6 mb-4">
                   <label for="adresse1">Adresse 1</label>
@@ -141,10 +140,6 @@
                     placeholder="Apartment, studio"
                   />
                 </div>
-
-                </div>
-                <div class="row">
-
                   <div class="adresse col-md-2 mb-4">
                     <label for="codePostal">Code postal</label>
                     <input
@@ -168,32 +163,33 @@
                     <select
                       id="paysClient"
                       formControlName="pays"
-                      class="form-control border border-success"
-                    >
+                      class="form-control border border-success">
                       <option selected>Sélectionner un pays</option>
                       <option>Côte d'Ivoire</option>
                     </select>
                   </div>
                 </div>
-
               <div class="row">
                 <div class="col-lg-12 mb-4">
                   <label>Logo<span style="color: red">*</span></label>
-                  <dropzone class="dropzone border" formControlName="logo">
-                  </dropzone>
+                  <input type="file" id="logo" class="form-control" id="undefined" multiple="" name="logo">
+                  <!-- <dropzone class="dropzone"></dropzone> -->
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-5"></div>
-                <div class="col-md-1">
-                  <button type="reset" class="btn btn-secondary">
-                    Annuler
+                <div class="col-md-4 mb-4"></div>
+
+                <div class="col-md-2 mb-4">
+                  <button type="submit" class="btn btn-success">
+                    Valider
                   </button>
                 </div>
-                <div class="col-md-1">
-                  <button type="submit" class="btn btn-success">Valider</button>
+                <div class="col-md-2 mb-4">
+                  <button type="reset" class="btn btn-outline-secondary">
+                   Annuler
+                  </button>
                 </div>
-                <div class="col-md-5"></div>
+                <div class="col-md-4 mb-4"></div>
               </div>
             </form>
             <p>{{ banqueForm.status }}</p>

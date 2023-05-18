@@ -55,9 +55,10 @@ import { ActeImmobilierComponent } from './acteimmobilier/acte-immobilier/acte-i
 import { FicheReceptionComponent } from './fichereception/fiche-reception/fiche-reception.component';
 import { ListeBanqueComponent } from './clients/liste-banque/liste-banque.component';
 import { DataService } from './clients/liste-banque/data.service';
+import { ListePhysiqueComponent } from './clients/liste-physique/liste-physique.component';
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent, PhysiqueComponent, BanqueComponent, EntrepriseComponent, SuccessionComponent, CommunauteComponent, ConstitutionSocieteComponent, ModificationSocieteComponent, OuvertureCreditComponent, ActeImmobilierComponent, FicheReceptionComponent, ListeBanqueComponent],
+  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent, PhysiqueComponent, BanqueComponent, EntrepriseComponent, SuccessionComponent, CommunauteComponent, ConstitutionSocieteComponent, ModificationSocieteComponent, OuvertureCreditComponent, ActeImmobilierComponent, FicheReceptionComponent, ListeBanqueComponent, ListePhysiqueComponent],
   imports: [
     CommonModule,
     FormsModule,

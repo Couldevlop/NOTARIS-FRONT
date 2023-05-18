@@ -3,18 +3,18 @@
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <div class="row mt-4">
-        <div class="col-md-10">
-        </div>
-        <div class="col-md-2">
-          <a routerLink="/banque" class="btn btn-secondary" style="background-color: #1a1a1a; font-size:16; font-family:poppins;"><i class="fas fa-plus"> Ajouter une banque</i> </a>
-        </div></div>
         <div class="card-body">
-
-          <div class="row mb-md-2">
-
+          <div class="row mb-2">
+            <div class="col-sm-12 col-md-6 me-auto"></div>
+            <div class="col-sm-12 col-md-3 me-auto"></div>
+            <div class="col-sm-12 col-md mb-3"><a routerLink="/banque" class="btn btn-dark"><i class="fas fa-plus"></i> Ajouter une banque
+            </a>
+          </div>
+          
+          </div>
+          
+        <div class="row mb-2">
             <div class="col-sm-12 col-md-6">
-
               <div class="dataTables_length" id="tickets-table_length">
                 <label
                   class="d-inline-flex align-items-center">Afficher
@@ -28,10 +28,9 @@
             </div>
             <!-- Search -->
             <div class="col-sm-12 col-md-6">
-
-
               <div id="tickets-table_filter"
                    class="dataTables_filter text-md-end">
+                   
                   <label
                   class="d-inline-flex align-items-center">
                   Recherche:
@@ -51,12 +50,12 @@
               <thead style="background-color: #079347; color:#fff; text-align: center">
                 <tr>
 
-                  <th sortable="nom">Sigle</th>
-                  <th sortable="email">Raison sociale</th>
-                  <th sortable="contact">Email</th>
-                  <th sortable="pays">Contact</th>
-                  <th sortable="ville">Pays</th>
-                  <th sortable="adresse">Ville</th>
+                  <th sortable="sigle">Sigle</th>
+                  <th sortable="rs">Raison sociale</th>
+                  <th sortable="email">Email</th>
+                  <th sortable="contact">Contact</th>
+                  <th sortable="pays">Pays</th>
+                  <th sortable="ville">Ville</th>
                   <th sortable="adresse">Adresse</th>
                   <th>Actions</th>
                 </tr>
