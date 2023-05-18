@@ -4,15 +4,10 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ChatComponent } from './chat/chat.component';
 import { DefaultComponent } from './dashboards/default/default.component';
 import { FilemanagerComponent } from './filemanager/filemanager.component';
-import { PhysiqueComponent } from './clients/physique/physique.component';
-import { EntrepriseComponent } from './clients/entreprise/entreprise.component';
-import { BanqueComponent } from './clients/banque/banque.component';
-import { ListeBanqueComponent } from './clients/liste-banque/liste-banque.component';
-import { SuccessionComponent } from './liquidation/succession/succession.component';
-import { CommunauteComponent } from './liquidation/communaute/communaute.component';
-import { ConstitutionSocieteComponent } from './societe/constitution-societe/constitution-societe.component';
-import { ModificationSocieteComponent } from './societe/modification-societe/modification-societe.component';
-import { OuvertureCreditComponent } from './ouvertcredit/ouverture-credit/ouverture-credit.component';
+import { PhysiqueComponent } from './clients/physique/form-physique/physique.component';
+import { EntrepriseComponent } from './clients/entreprise/form-entreprise/entreprise.component';
+import { BanqueComponent } from './clients/banque/form-banque/banque.component';
+import { ListeBanqueComponent } from './clients/banque/liste-banque/liste-banque.component';
 import { ActeImmobilierComponent } from './acteimmobilier/acte-immobilier/acte-immobilier.component';
 import { FicheReceptionComponent } from './fichereception/fiche-reception/fiche-reception.component';
 const routes: Routes = [
@@ -25,11 +20,6 @@ const routes: Routes = [
   { path: 'entreprise', component: EntrepriseComponent},
   { path: 'banque', component: BanqueComponent},
   { path: 'liste-banque', component: ListeBanqueComponent},
-  { path: 'succession', component: SuccessionComponent},
-  { path: 'communaute', component: CommunauteComponent},
-  { path: 'constitution-societe', component: ConstitutionSocieteComponent},
-  { path: 'modification-societe', component: ModificationSocieteComponent},
-  { path: 'ouverture-credit', component: OuvertureCreditComponent},
   { path: 'acte-immobilier', component: ActeImmobilierComponent},
   { path: 'fiche-reception', component: FicheReceptionComponent},
   { path: 'dashboard', component: DefaultComponent },

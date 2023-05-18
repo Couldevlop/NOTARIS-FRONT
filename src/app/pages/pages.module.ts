@@ -42,27 +42,23 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChatComponent } from './chat/chat.component';
 
 import { FilemanagerComponent } from './filemanager/filemanager.component';
-import { DropzoneModule } from 'ngx-dropzone-wrapper';
-import { PhysiqueComponent } from './clients/physique/physique.component';
-import { BanqueComponent } from './clients/banque/banque.component';
-import { EntrepriseComponent } from './clients/entreprise/entreprise.component';
-import { SuccessionComponent } from './liquidation/succession/succession.component';
-import { CommunauteComponent } from './liquidation/communaute/communaute.component';
-import { ConstitutionSocieteComponent } from './societe/constitution-societe/constitution-societe.component';
-import { ModificationSocieteComponent } from './societe/modification-societe/modification-societe.component';
-import { OuvertureCreditComponent } from './ouvertcredit/ouverture-credit/ouverture-credit.component';
+//import { DropzoneModule } from 'ngx-dropzone-wrapper';
+import { PhysiqueComponent } from './clients/physique/form-physique/physique.component';
+import { BanqueComponent } from './clients/banque/form-banque/banque.component';
+import { EntrepriseComponent } from './clients/entreprise/form-entreprise/entreprise.component';
+
 import { ActeImmobilierComponent } from './acteimmobilier/acte-immobilier/acte-immobilier.component';
 import { FicheReceptionComponent } from './fichereception/fiche-reception/fiche-reception.component';
-import { ListeBanqueComponent } from './clients/liste-banque/liste-banque.component';
-import { DataService } from './clients/liste-banque/data.service';
-import { ListePhysiqueComponent } from './clients/liste-physique/liste-physique.component';
+import { ListeBanqueComponent } from './clients/banque/liste-banque/liste-banque.component';
+import { DataService } from './clients/banque/liste-banque/data.service';
+import { ListePhysiqueComponent } from './clients/physique/liste-physique/liste-physique.component';
+import { ListeEntrepriseComponent } from './clients/entreprise/liste-entreprise/liste-entreprise.component';
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent, PhysiqueComponent, BanqueComponent, EntrepriseComponent, SuccessionComponent, CommunauteComponent, ConstitutionSocieteComponent, ModificationSocieteComponent, OuvertureCreditComponent, ActeImmobilierComponent, FicheReceptionComponent, ListeBanqueComponent, ListePhysiqueComponent],
+  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent, PhysiqueComponent, BanqueComponent, EntrepriseComponent, ActeImmobilierComponent, FicheReceptionComponent, ListeBanqueComponent, ListePhysiqueComponent, ListeEntrepriseComponent],
   imports: [
     CommonModule,
     FormsModule,
-    DropzoneModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     PagesRoutingModule,
