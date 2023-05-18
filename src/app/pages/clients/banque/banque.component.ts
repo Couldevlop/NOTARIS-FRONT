@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { Banque } from "src/app/models/clients/Banque";
 import { BanqueServiceService } from "src/app/services/banque-service.service";
+import { DocumentServiceService } from "src/app/services/document-service.service";
 
 @Component({
   selector: "app-banque",
@@ -14,7 +16,21 @@ export class BanqueComponent implements OnInit {
   public nature: any = [""];
   selectedFile?: any;
 
-  constructor(private fb: FormBuilder, private service: BanqueServiceService) {}
+  constructor(
+    private fb: FormBuilder,
+    private service: BanqueServiceService,
+    private router: Router,
+    private docservice: DocumentServiceService
+  ) {}
+
+  allFiles: File[] = [];
+  droppedFiles(allFiles: File[]): void {
+    const filesAmount = allFiles.length;
+    for (let i = 0; i < filesAmount; i++) {
+      const file = allFiles[i];
+      this.allFiles.push(file);
+    }
+  }
 
   banqueForm = this.fb.group({
     sigle: ["", Validators.required],
@@ -49,6 +65,7 @@ export class BanqueComponent implements OnInit {
       error: (e) => console.error(e),
     });
     console.log(JSON.stringify(this.banqueForm.value));
+    //this.router.navigate(["/liste-banque"]);
   }
 
   selectFile(event: any): void {

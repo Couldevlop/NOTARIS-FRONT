@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { BanqueComponent } from './banque.component';
+import { BanqueComponent } from "./banque.component";
 
-describe('BanqueComponent', () => {
+describe("BanqueComponent", () => {
   let component: BanqueComponent;
   let fixture: ComponentFixture<BanqueComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BanqueComponent ]
-    })
-    .compileComponents();
+      declarations: [BanqueComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BanqueComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
