@@ -65,7 +65,7 @@ export class PhysiqueComponent implements OnInit {
       error: (e) => console.error(e),
     });
     console.log(JSON.stringify(this.physiqueForm.value));
-    this.router.navigate(["/"]);
+    this.router.navigate(["/liste-banque"]);
     //console.log(this.physiqueForm.value);
   }
 }
