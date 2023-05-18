@@ -65,7 +65,7 @@ export class BanqueComponent implements OnInit {
       error: (e) => console.error(e),
     });
     console.log(JSON.stringify(this.banqueForm.value));
-    this.router.navigate(["/banque-list"]);
+    //this.router.navigate(["/liste-banque"]);
   }
 
   selectFile(event: any): void {
