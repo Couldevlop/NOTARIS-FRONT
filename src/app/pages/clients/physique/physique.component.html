@@ -67,6 +67,74 @@
 
               <div class="row" formGroupName="adresse">
                 <div class="adresse col-md-6 mb-4">
+
+                <label for="adresse1">Adresse 1</label>
+                <input type="text" class="form-control border border-success" id="adresse1" placeholder="1234 Main St">
+              </div>
+              <div class="adresse col-md-6 mb-4">
+                <label for="adresse2">Adresse 2</label>
+                <input type="text" class="form-control border border-success" id="adresse2" placeholder="Apartment, studio">
+              </div>
+              <div class="adresse col-md-2 mb-4">
+                <label for="codePostal">Code postal</label>
+                <input type="text" class="form-control border border-success" id="codePostal">
+              </div>
+                <div class="adresse col-md-4 mb-4">
+                  <label for="villeClient">Ville</label>
+                  <input type="text" class="form-control border border-success" id="villeClient">
+                </div>
+                <div class="adresse col-md-6 mb-4">
+                  <label for="paysClient">Pays</label>
+                  <select id="paysClient" class="form-control border border-success">
+                    <option selected>Sélectionner un pays</option>
+                    <option>...</option>
+                  </select>
+                </div>
+             </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <label>Situation matrimoniale <span style="color:red">*</span></label>
+              <select id="smClient" name="smClient" class="form-select border border-success">
+              <option selected>Sélectionner une situation matrimoniale</option>
+                <option value="celibataire">Célibataire</option>
+                <option value="marie">Marié</option>
+                <option value="veuf">Veuf</option>
+                <option value="divorce">Divorce</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-4">
+              <label>Profession <span style="color:red">*</span></label>
+              <input type="text" id="profClient" name="profClient" class="form-control border border-success" placeholder="Veuillez saisir la profession du client" accept="*">
+
+            </div>
+          </div>
+
+<div class="row">
+  <div class="col-md-6 mb-4">
+  <label>Lieu de travail <span style="color:red">*</span></label>
+  <input type="text" id="ltClient" name="ltClient" class="form-control border border-success" placeholder="Veuillez saisir le lieu de travail du client" accept="*">
+</div>
+<div class="col-md-6 mb-4">
+  <label>Fixe</label>
+  <input type="tel" id="fixeClient" name="fixeClient" class="form-control border border-success" placeholder="Veuillez saisir le fixe du client">
+
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <label>Date de naissance <span style="color:red">*</span></label>
+    <input type="date" class="form-control border border-success" placeholder="Veuillez sélectionner la date">
+  </div>
+
+  <div class="col-md-6 mb-4">
+    <label>Photo <span style="color:red">*</span></label>
+    <input type="file" id="photo" class="form-control" id="undefined" multiple="" name="photo">
+    <!-- <dropzone class="dropzone"></dropzone> -->
+  </div>
+
+</div>
+
                   <label for="adresse1">Adresse 1</label>
                   <input
                     type="text"
@@ -200,11 +268,34 @@
                   />
                 </div>
 
+
                 <div class="col-md-6 mb-4">
                   <label>Photo <span style="color: red">*</span></label>
                   <dropzone class="dropzone border"></dropzone>
                 </div>
               </div>
+
+
+<div class="row">
+  <div class="col-md-4 mb-4"></div>
+
+  <div class="col-md-2 mb-4">
+    <button type="submit" class="btn btn-success">
+      Valider
+    </button>
+  </div>
+  <div class="col-md-2 mb-4">
+    <button type="reset" class="btn btn-outline-secondary">
+     Annuler
+    </button>
+  </div>
+  <div class="col-md-4 mb-4"></div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
 
               <div class="row">
                 <div class="col-md-5"></div>
@@ -222,6 +313,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
