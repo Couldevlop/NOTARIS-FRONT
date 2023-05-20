@@ -1,23 +1,20 @@
-import { Component, OnInit, ViewChildren, QueryList } from "@angular/core";
-import { DecimalPipe } from "@angular/common";
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 
-import { Table } from "./advanced.model";
+import { Table } from './advanced.model';
 
-import { tableData } from "./data";
+import { tableData } from './data';
 
-import { AdvancedService } from "./advanced.service";
-import {
-  AdvancedSortableDirective,
-  SortEvent,
-} from "./advanced-sortable.directive";
+import { AdvancedService } from './advanced.service';
+import { AdvancedSortableDirective, SortEvent } from './advanced-sortable.directive';
 
 @Component({
-  selector: "app-advancedtable",
-  templateUrl: "./advancedtable.component.html",
-  styleUrls: ["./advancedtable.component.scss"],
-  providers: [AdvancedService, DecimalPipe],
+  selector: 'app-advancedtable',
+  templateUrl: './advancedtable.component.html',
+  styleUrls: ['./advancedtable.component.scss'],
+  providers: [AdvancedService, DecimalPipe]
 })
 
 /**
@@ -33,8 +30,7 @@ export class AdvancedtableComponent implements OnInit {
   tables$: Observable<Table[]>;
   total$: Observable<number>;
 
-  @ViewChildren(AdvancedSortableDirective)
-  headers: QueryList<AdvancedSortableDirective>;
+  @ViewChildren(AdvancedSortableDirective) headers: QueryList<AdvancedSortableDirective>;
   public isCollapsed = true;
 
   constructor(public service: AdvancedService) {
@@ -43,10 +39,7 @@ export class AdvancedtableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.breadCrumbItems = [
-      { label: "Client physique" },
-      { label: "Liste des clients physique", active: true },
-    ];
+    this.breadCrumbItems = [{ label: 'Client physique' }, { label: 'Liste des clients physique', active: true }];
     /**
      * fetch data
      */
@@ -56,6 +49,7 @@ export class AdvancedtableComponent implements OnInit {
   changeValue(i) {
     this.hideme[i] = !this.hideme[i];
   }
+
 
   /**
    * fetches the table value
@@ -74,9 +68,9 @@ export class AdvancedtableComponent implements OnInit {
    */
   onSort({ column, direction }: SortEvent) {
     // resetting other headers
-    this.headers.forEach((header) => {
+    this.headers.forEach(header => {
       if (header.sortable !== column) {
-        header.direction = "";
+        header.direction = '';
       }
     });
     this.service.sortColumn = column;

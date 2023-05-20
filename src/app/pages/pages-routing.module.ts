@@ -1,171 +1,42 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CalendarComponent } from "./calendar/calendar.component";
-import { ChatComponent } from "./chat/chat.component";
 import { DefaultComponent } from "./dashboards/default/default.component";
 import { FilemanagerComponent } from "./filemanager/filemanager.component";
-import { PhysiqueComponent } from "./clients/physique/physique.component";
-import { EntrepriseComponent } from "./clients/entreprise/entreprise.component";
-import { BanqueComponent } from "./clients/banque/banque.component";
-import { ListeBanqueComponent } from "./clients/liste-banque/liste-banque.component";
-import { SuccessionComponent } from "./liquidation/succession/succession.component";
-import { CommunauteComponent } from "./liquidation/communaute/communaute.component";
-import { ConstitutionSocieteComponent } from "./societe/constitution-societe/constitution-societe.component";
-import { ModificationSocieteComponent } from "./societe/modification-societe/modification-societe.component";
-import { OuvertureCreditComponent } from "./ouvertcredit/ouverture-credit/ouverture-credit.component";
+import { PhysiqueComponent } from "./clients/physique/form-physique/physique.component";
+import { EntrepriseComponent } from "./clients/entreprise/form-entreprise/entreprise.component";
+import { BanqueComponent } from "./clients/banque/form-banque/banque.component";
+import { ListeBanqueComponent } from "./clients/banque/liste-banque/liste-banque.component";
 import { ActeImmobilierComponent } from "./acteimmobilier/acte-immobilier/acte-immobilier.component";
 import { FicheReceptionComponent } from "./fichereception/fiche-reception/fiche-reception.component";
+import { ListePhysiqueComponent } from "./clients/physique/liste-physique/liste-physique.component";
+import { ListeEntrepriseComponent } from "./clients/entreprise/liste-entreprise/liste-entreprise.component";
+import { EditEntrepiseComponent } from "./clients/entreprise/edit-entreprise/edit-entrepise.component";
 const routes: Routes = [
   // { path: '', redirectTo: 'dashboard' },
   {
     path: "",
     component: DefaultComponent,
   },
-  { path: "physique", component: PhysiqueComponent },
-  { path: "entreprise", component: EntrepriseComponent },
-  { path: "banque", component: BanqueComponent },
-  { path: "succession", component: SuccessionComponent },
-  { path: "communaute", component: CommunauteComponent },
-  { path: "constitution-societe", component: ConstitutionSocieteComponent },
-  { path: "modification-societe", component: ModificationSocieteComponent },
-  { path: "ouverture-credit", component: OuvertureCreditComponent },
+  { path: "form-physique", component: PhysiqueComponent },
+  { path: "edit-entreprise/:index", component: EditEntrepiseComponent },
+  { path: "form-entreprise", component: EntrepriseComponent },
+  { path: "form-banque", component: BanqueComponent },
+  { path: "liste-banque", component: ListeBanqueComponent },
   { path: "acte-immobilier", component: ActeImmobilierComponent },
   { path: "fiche-reception", component: FicheReceptionComponent },
   { path: "dashboard", component: DefaultComponent },
   { path: "calendar", component: CalendarComponent },
-  { path: "chat", component: ChatComponent },
+
   { path: "filemanager", component: FilemanagerComponent },
+  { path: "liste-physique", component: ListePhysiqueComponent },
+  { path: "liste-entreprise", component: ListeEntrepriseComponent },
   {
     path: "dashboards",
     loadChildren: () =>
       import("./dashboards/dashboards.module").then((m) => m.DashboardsModule),
-  },
-  {
-    path: "ecommerce",
-    loadChildren: () =>
-      import("./ecommerce/ecommerce.module").then((m) => m.EcommerceModule),
-  },
-  {
-    path: "crypto",
-    loadChildren: () =>
-      import("./crypto/crypto.module").then((m) => m.CryptoModule),
-  },
-  {
-    path: "email",
-    loadChildren: () =>
-      import("./email/email.module").then((m) => m.EmailModule),
-  },
-  {
-    path: "invoices",
-    loadChildren: () =>
-      import("./invoices/invoices.module").then((m) => m.InvoicesModule),
-  },
-  {
-    path: "projects",
-    loadChildren: () =>
-      import("./projects/projects.module").then((m) => m.ProjectsModule),
-  },
-  {
-    path: "tasks",
-    loadChildren: () =>
-      import("./tasks/tasks.module").then((m) => m.TasksModule),
-  },
-  {
-    path: "contacts",
-    loadChildren: () =>
-      import("./contacts/contacts.module").then((m) => m.ContactsModule),
-  },
-  {
-    path: "blog",
-    loadChildren: () => import("./blog/blog.module").then((m) => m.BlogModule),
-  },
-  {
-    path: "pages",
-    loadChildren: () =>
-      import("./utility/utility.module").then((m) => m.UtilityModule),
-  },
-  {
-    path: "ui",
-    loadChildren: () => import("./ui/ui.module").then((m) => m.UiModule),
-  },
-  {
-    path: "form",
-    loadChildren: () => import("./form/form.module").then((m) => m.FormModule),
-  },
-  {
-    path: "tables",
-    loadChildren: () =>
-      import("./tables/tables.module").then((m) => m.TablesModule),
-  },
-  {
-    path: "icons",
-    loadChildren: () =>
-      import("./icons/icons.module").then((m) => m.IconsModule),
-  },
-  {
-    path: "charts",
-    loadChildren: () =>
-      import("./chart/chart.module").then((m) => m.ChartModule),
-  },
-  {
-    path: "maps",
-    loadChildren: () => import("./maps/maps.module").then((m) => m.MapsModule),
-  },
-  {
-    path: "jobs",
-    loadChildren: () => import("./jobs/jobs.module").then((m) => m.JobsModule),
   },
 
-  { path: "physique", component: PhysiqueComponent },
-  { path: "entreprise", component: EntrepriseComponent },
-  { path: "banque", component: BanqueComponent },
-  { path: "liste-banque", component: ListeBanqueComponent },
-  { path: "succession", component: SuccessionComponent },
-  { path: "communaute", component: CommunauteComponent },
-  { path: "constitution-societe", component: ConstitutionSocieteComponent },
-  { path: "modification-societe", component: ModificationSocieteComponent },
-  { path: "ouverture-credit", component: OuvertureCreditComponent },
-  { path: "acte-immobilier", component: ActeImmobilierComponent },
-  { path: "fiche-reception", component: FicheReceptionComponent },
-  { path: "dashboard", component: DefaultComponent },
-  { path: "calendar", component: CalendarComponent },
-  { path: "chat", component: ChatComponent },
-  { path: "filemanager", component: FilemanagerComponent },
-  {
-    path: "dashboards",
-    loadChildren: () =>
-      import("./dashboards/dashboards.module").then((m) => m.DashboardsModule),
-  },
-  {
-    path: "ecommerce",
-    loadChildren: () =>
-      import("./ecommerce/ecommerce.module").then((m) => m.EcommerceModule),
-  },
-  {
-    path: "crypto",
-    loadChildren: () =>
-      import("./crypto/crypto.module").then((m) => m.CryptoModule),
-  },
-  {
-    path: "email",
-    loadChildren: () =>
-      import("./email/email.module").then((m) => m.EmailModule),
-  },
-  {
-    path: "invoices",
-    loadChildren: () =>
-      import("./invoices/invoices.module").then((m) => m.InvoicesModule),
-  },
-  {
-    path: "projects",
-    loadChildren: () =>
-      import("./projects/projects.module").then((m) => m.ProjectsModule),
-  },
-  {
-    path: "tasks",
-    loadChildren: () =>
-      import("./tasks/tasks.module").then((m) => m.TasksModule),
-  },
   {
     path: "contacts",
     loadChildren: () =>
@@ -192,24 +63,6 @@ const routes: Routes = [
     path: "tables",
     loadChildren: () =>
       import("./tables/tables.module").then((m) => m.TablesModule),
-  },
-  {
-    path: "icons",
-    loadChildren: () =>
-      import("./icons/icons.module").then((m) => m.IconsModule),
-  },
-  {
-    path: "charts",
-    loadChildren: () =>
-      import("./chart/chart.module").then((m) => m.ChartModule),
-  },
-  {
-    path: "maps",
-    loadChildren: () => import("./maps/maps.module").then((m) => m.MapsModule),
-  },
-  {
-    path: "jobs",
-    loadChildren: () => import("./jobs/jobs.module").then((m) => m.JobsModule),
   },
 ];
 

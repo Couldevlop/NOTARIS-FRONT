@@ -3,7 +3,8 @@ import { Injectable } from "@angular/core";
 import { Banque } from "../models/clients/Banque";
 import { Observable } from "rxjs";
 
-const banqueApiUrl = "http://localhost:8086/notaris/v1/banque";
+const banqueApiUrl = "http://localhost:8086/notaris/v1/banque/new";
+const banqueApiUrlAll = "http://localhost:8086/notaris/v1/banque";
 
 @Injectable({
   providedIn: "root",
@@ -11,8 +12,8 @@ const banqueApiUrl = "http://localhost:8086/notaris/v1/banque";
 export class BanqueServiceService {
   constructor(private http: HttpClient) {}
 
-  public create(Banque: any): Observable<Banque> {
-    return this.http.post(banqueApiUrl, Banque);
+  public create(banque: any): Observable<Banque> {
+    return this.http.post(banqueApiUrl, banque);
   }
 
   public findById(id: number): Observable<Banque> {
@@ -20,7 +21,7 @@ export class BanqueServiceService {
   }
 
   public findAll(): Observable<Banque[]> {
-    return this.http.get<Banque[]>(`${banqueApiUrl}`);
+    return this.http.get<Banque[]>(`${banqueApiUrlAll}`);
   }
 
   public findBySigle(sigle: string): Observable<Banque> {

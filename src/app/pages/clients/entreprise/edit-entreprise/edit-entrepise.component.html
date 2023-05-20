@@ -1,0 +1,244 @@
+<div class="container-fluid">
+  <!-- start page title -->
+  <app-page-title
+    title="Ajouter une entreprise"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="mb-4">
+            Les champs avec (<span style="color: red">*</span>) sont
+            obligatoires
+          </h6>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <form [formGroup]="entrepriseForm" (ngSubmit)="submit()">
+                <div class="row">
+                  <div class="col-md-4 mb-4">
+                    <label
+                      >Nature de société
+                      <span style="color: red">*</span></label
+                    >
+                    <select
+                      formControlName="nature"
+                      class="form-select border border-success"
+                    >
+                      <option [(ngModel)]="entreprise.nature">
+                        {{ entreprise.nature }}
+                      </option>
+                      <option value="SA">SA</option>
+                      <option value="SARL">SARL</option>
+                      <option value="GIE">GIE</option>
+                      <option value="SAS">SAS</option>
+                      <option value="SGI">SGI</option>
+                      <option value="EURL">EURL</option>
+                      <option value="SARLU">SARLU</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <label
+                      >Raison sociale <span style="color: red">*</span></label
+                    >
+                    <input
+                      type="text"
+                      formControlName="raisonSociale"
+                      class="form-control border border-success"
+                      [(ngModel)]="entreprise.raisonSociale"
+                    />
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <label
+                      >Représentant légal
+                      <span style="color: red">*</span></label
+                    >
+                    <input
+                      type="email"
+                      formControlName="representantLegal"
+                      class="form-control border border-success"
+                      [(ngModel)]="entreprise.email"
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label
+                      >Numéro de régistre de commerce
+                      <span style="color: red">*</span></label
+                    >
+                    <input
+                      type="text"
+                      [(ngModel)]="entreprise.numRCCM"
+                      formControlName="numRCCM"
+                      class="form-control border border-success"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label>Activite <span style="color: red">*</span></label>
+                    <input
+                      type="tel"
+                      formControlName="activite"
+                      class="form-control border border-success"
+                      [(ngModel)]="entreprise.activite"
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label>Sigle <span style="color: red">*</span></label>
+                    <input
+                      type="text"
+                      formControlName="sigle"
+                      class="form-control border border-success"
+                      [(ngModel)]="entreprise.sigle"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label
+                      >Siège social <span style="color: red">*</span></label
+                    >
+                    <input
+                      type="text"
+                      formControlName="localisation"
+                      class="form-control border border-success"
+                      [(ngModel)]="entreprise.localisation"
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label>Numéro DFE</label>
+                    <input
+                      type="text"
+                      formControlName="dfe"
+                      [(ngModel)]="entreprise.dfe"
+                      class="form-control border border-success"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label
+                      >Adresse email<span style="color: red">*</span></label
+                    >
+                    <input
+                      type="email"
+                      formControlName="email"
+                      class="form-control border border-success"
+                      [(ngModel)]="entreprise.email"
+                    />
+                  </div>
+                </div>
+
+                <div class="row" formGroupName="adresse">
+                  <div class="adresse col-md-6 mb-4">
+                    <label for="adresse1">Adresse 1</label>
+                    <input
+                      type="text"
+                      class="form-control border border-success"
+                      formControlName="adresse1"
+                      id="adresse1"
+                      [(ngModel)]="entreprise.adresse.adresse1"
+                    />
+                  </div>
+                  <div class="adresse col-md-6 mb-4">
+                    <label for="adresse2">Adresse 2</label>
+                    <input
+                      type="text"
+                      class="form-control border border-success"
+                      formControlName="adresse2"
+                      id="adresse2"
+                      [(ngModel)]="entreprise.adresse.adresse2"
+                    />
+                  </div>
+                  <div class="adresse col-md-2 mb-4">
+                    <label for="codePostal">Code postal</label>
+                    <input
+                      type="text"
+                      class="form-control border border-success"
+                      id="codePostal"
+                      formControlName="codePostal"
+                      [(ngModel)]="entreprise.adresse.codePostal"
+                    />
+                  </div>
+                  <div class="adresse col-md-4 mb-4">
+                    <label for="ville">Ville</label>
+                    <input
+                      type="text"
+                      class="form-control border border-success"
+                      formControlName="ville"
+                      id="ville"
+                      [(ngModel)]="entreprise.adresse.ville"
+                    />
+                  </div>
+                  <div class="adresse col-md-6 mb-4">
+                    <label for="pays">Pays</label>
+                    <select
+                      id="pays"
+                      formControlName="pays"
+                      class="form-control border border-success"
+                    >
+                      <option [(ngModel)]="entreprise.adresse.pays">
+                        {{ entreprise.adresse.pays }}
+                      </option>
+                      <option>Côte d'Ivoire</option>
+                      <option>Guinnée</option>
+                      <option>Burkina Fasso</option>
+                      <option>Mali</option>
+                      <option>Togo</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label>Fixe</label>
+                    <input
+                      type="tel"
+                      formControlName="fixe"
+                      class="form-control border border-success"
+                      [(ngModel)]="entreprise.fixe"
+                    />
+                  </div>
+
+                  <div class="col-md-6 mb-4">
+                    <label>Photo <span style="color: red">*</span></label>
+                    <input
+                      type="file"
+                      id="photo"
+                      class="form-control"
+                      id="undefined"
+                      multiple=""
+                      name="photo"
+                    />
+                    <!-- <dropzone class="dropzone"></dropzone> -->
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4 mb-4"></div>
+
+                  <div class="col-md-2 mb-4">
+                    <button type="submit" class="btn btn-success">
+                      Valider
+                    </button>
+                  </div>
+                  <div class="col-md-2 mb-4">
+                    <button type="reset" class="btn btn-outline-secondary">
+                      Annuler
+                    </button>
+                  </div>
+                  <div class="col-md-4 mb-4"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

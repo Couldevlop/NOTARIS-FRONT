@@ -5,15 +5,19 @@ export class Moral {
   id?: any;
   adresse?: Adresse;
 
+  sigle?: string;
+
   raisonSociale?: String;
 
-  nature?: Nature;
+  nature?: string;
 
   activite?: String;
 
+  email?: string;
+
   numRCCM?: String;
 
-  DFE?: String;
+  dfe?: String;
 
   logo?: String;
 

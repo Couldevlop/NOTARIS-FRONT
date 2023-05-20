@@ -19,109 +19,66 @@ import { UIModule } from "../shared/ui/ui.module";
 // Emoji Picker
 import { PickerModule } from "@ctrl/ngx-emoji-mart";
 
+import { PagesRoutingModule } from "./pages-routing.module";
+
 import { DashboardsModule } from "./dashboards/dashboards.module";
-import { EcommerceModule } from "./ecommerce/ecommerce.module";
-import { CryptoModule } from "./crypto/crypto.module";
-import { EmailModule } from "./email/email.module";
-import { InvoicesModule } from "./invoices/invoices.module";
-import { ProjectsModule } from "./projects/projects.module";
-import { TasksModule } from "./tasks/tasks.module";
 import { ContactsModule } from "./contacts/contacts.module";
 import { BlogModule } from "./blog/blog.module";
 import { UtilityModule } from "./utility/utility.module";
 import { UiModule } from "./ui/ui.module";
 import { FormModule } from "./form/form.module";
 import { TablesModule } from "./tables/tables.module";
-import { IconsModule } from "./icons/icons.module";
 import { ChartModule } from "./chart/chart.module";
 import { CalendarComponent } from "./calendar/calendar.component";
-import { MapsModule } from "./maps/maps.module";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { ChatComponent } from "./chat/chat.component";
-
-
-import { FilemanagerComponent } from './filemanager/filemanager.component';
-import { DropzoneModule } from 'ngx-dropzone-wrapper';
-import { PhysiqueComponent } from './clients/physique/physique.component';
-import { BanqueComponent } from './clients/banque/banque.component';
-import { EntrepriseComponent } from './clients/entreprise/entreprise.component';
-import { SuccessionComponent } from './liquidation/succession/succession.component';
-import { CommunauteComponent } from './liquidation/communaute/communaute.component';
-import { ConstitutionSocieteComponent } from './societe/constitution-societe/constitution-societe.component';
-import { ModificationSocieteComponent } from './societe/modification-societe/modification-societe.component';
-import { OuvertureCreditComponent } from './ouvertcredit/ouverture-credit/ouverture-credit.component';
-import { ActeImmobilierComponent } from './acteimmobilier/acte-immobilier/acte-immobilier.component';
-import { FicheReceptionComponent } from './fichereception/fiche-reception/fiche-reception.component';
-import { ListeBanqueComponent } from './clients/liste-banque/liste-banque.component';
-import { DataService } from './clients/liste-banque/data.service';
-import { ListePhysiqueComponent } from './clients/liste-physique/liste-physique.component';
-
-@NgModule({
-  declarations: [CalendarComponent, ChatComponent, FilemanagerComponent, PhysiqueComponent, BanqueComponent, EntrepriseComponent, SuccessionComponent, CommunauteComponent, ConstitutionSocieteComponent, ModificationSocieteComponent, OuvertureCreditComponent, ActeImmobilierComponent, FicheReceptionComponent, ListeBanqueComponent, ListePhysiqueComponent],
 
 import { FilemanagerComponent } from "./filemanager/filemanager.component";
-import { DropzoneModule } from "ngx-dropzone-wrapper";
-import { PhysiqueComponent } from "./clients/physique/physique.component";
-import { BanqueComponent } from "./clients/banque/banque.component";
-import { EntrepriseComponent } from "./clients/entreprise/entreprise.component";
-import { SuccessionComponent } from "./liquidation/succession/succession.component";
-import { CommunauteComponent } from "./liquidation/communaute/communaute.component";
-import { ConstitutionSocieteComponent } from "./societe/constitution-societe/constitution-societe.component";
-import { ModificationSocieteComponent } from "./societe/modification-societe/modification-societe.component";
-import { OuvertureCreditComponent } from "./ouvertcredit/ouverture-credit/ouverture-credit.component";
+//import { DropzoneModule } from 'ngx-dropzone-wrapper';
+import { PhysiqueComponent } from "./clients/physique/form-physique/physique.component";
+import { BanqueComponent } from "./clients/banque/form-banque/banque.component";
+import { EntrepriseComponent } from "./clients/entreprise/form-entreprise/entreprise.component";
+
 import { ActeImmobilierComponent } from "./acteimmobilier/acte-immobilier/acte-immobilier.component";
 import { FicheReceptionComponent } from "./fichereception/fiche-reception/fiche-reception.component";
-import { ListeBanqueComponent } from "./clients/liste-banque/liste-banque.component";
-import { DataService } from "./clients/liste-banque/data.service";
-import { PagesRoutingModule } from "./pages-routing.module";
+import { ListeBanqueComponent } from "./clients/banque/liste-banque/liste-banque.component";
+import { DataService } from "./clients/banque/liste-banque/data.service";
+import { ListePhysiqueComponent } from "./clients/physique/liste-physique/liste-physique.component";
+import { ListeEntrepriseComponent } from "./clients/entreprise/liste-entreprise/liste-entreprise.component";
+import { EditEntrepiseComponent } from "./clients/entreprise/edit-entreprise/edit-entrepise.component";
 
 @NgModule({
   declarations: [
     CalendarComponent,
-    ChatComponent,
     FilemanagerComponent,
     PhysiqueComponent,
     BanqueComponent,
     EntrepriseComponent,
-    SuccessionComponent,
-    CommunauteComponent,
-    ConstitutionSocieteComponent,
-    ModificationSocieteComponent,
-    OuvertureCreditComponent,
     ActeImmobilierComponent,
     FicheReceptionComponent,
     ListeBanqueComponent,
+    ListePhysiqueComponent,
+    ListeEntrepriseComponent,
+    EditEntrepiseComponent,
   ],
-
-
   imports: [
     CommonModule,
     FormsModule,
-    DropzoneModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
+    PagesRoutingModule,
     NgApexchartsModule,
     ReactiveFormsModule,
     DashboardsModule,
-    CryptoModule,
-    EcommerceModule,
-    EmailModule,
-    InvoicesModule,
     HttpClientModule,
-    ProjectsModule,
     UIModule,
-    TasksModule,
     ContactsModule,
     BlogModule,
     UtilityModule,
     UiModule,
     FormModule,
     TablesModule,
-    IconsModule,
     ChartModule,
     WidgetModule,
-    PagesRoutingModule,
-    MapsModule,
     FullCalendarModule,
     TabsModule.forRoot(),
     TooltipModule.forRoot(),

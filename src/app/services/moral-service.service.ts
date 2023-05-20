@@ -33,7 +33,7 @@ export class MoralServiceService {
     return this.http.get<Moral[]>(moralUrlApi);
   }
 
-  public delete(id: number) {
-    this.http.get(`${moralUrlApi}/${id}`);
+  public deleteById(id: number) {
+    this.http.delete(`${moralUrlApi}/${id}`);
   }
 }
