@@ -1,0 +1,122 @@
+<div class="container-fluid">
+  <!-- start page title -->
+  <app-page-title
+    title="Ajouter un acte immobilier"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="mb-4">
+            Les champs avec (<span style="color: red">*</span>) sont
+            obligatoires
+          </h6>
+
+          <div class="row">
+            <div class="col-lg-10" style="margin: auto">
+              <form [formGroup]="formActeImmo" (ngSubmit)="submit()">
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label>Initulé <span style="color: red">*</span></label>
+                    <input
+                      type="text"
+                      formControlName="intitule"
+                      class="form-control border border-success"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label>Vendeur <span style="color: red">*</span></label>
+                    <select
+                      formControlName="nature"
+                      class="form-select border border-success"
+                    >
+                      <option selected>
+                        veuillez sélectionner un acheteur
+                      </option>
+                      <option value="SA">COULIBALY Seydou</option>
+                      <option value="SARL">OUATTARA Nambelé Yves</option>
+                      <option value="GIE">SORO PKandotchien</option>
+                      <option value="SAS">IRIE BI Archile</option>
+                      <option value="SGI">TOURE Elodie</option>
+                      <option value="EURL">KONE Fofana</option>
+                      <option value="SARLU">SEGONGO Issouf</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label>Acheteur <span style="color: red">*</span></label>
+                    <select
+                      formControlName="nature"
+                      class="form-select border border-success"
+                    >
+                      <option selected>
+                        veuillez sélectionner un acheteur
+                      </option>
+                      <option value="SA">COULIBALY Seydou</option>
+                      <option value="SARL">OUATTARA Nambelé Yves</option>
+                      <option value="GIE">SORO PKandotchien</option>
+                      <option value="SAS">IRIE BI Archile</option>
+                      <option value="SGI">TOURE Elodie</option>
+                      <option value="EURL">KONE Fofana</option>
+                      <option value="SARLU">SEGONGO Issouf</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label
+                      >Type Acte Immobilier
+                      <span style="color: red">*</span></label
+                    >
+                    <input
+                      type="text"
+                      formControlName="typeActeImmo"
+                      class="form-control border border-success"
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label>mandataire</label>
+                    <input
+                      type="text"
+                      formControlName="dfe"
+                      class="form-control border border-success"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label>Commentaire<span style="color: red">*</span></label>
+                    <input
+                      type="email"
+                      formControlName="email"
+                      class="form-control border border-success"
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4 mb-4"></div>
+
+                  <div class="col-md-2 mb-4">
+                    <button type="submit" class="btn btn-success">
+                      Valider
+                    </button>
+                  </div>
+                  <div class="col-md-2 mb-4">
+                    <button type="reset" class="btn btn-outline-secondary">
+                      Annuler
+                    </button>
+                  </div>
+                  <div class="col-md-4 mb-4"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

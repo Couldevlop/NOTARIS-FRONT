@@ -1,0 +1,162 @@
+<div class="container-fluid">
+  <app-page-title
+    title="Liste des Actes immobiliers"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row mb-2">
+            <div class="col-sm-12 col-md-6 me-auto"></div>
+            <div class="col-sm-12 col-md-3 me-auto"></div>
+            <div class="col-sm-12 col-md mb-3">
+              <a routerLink="/acte-immobilier" class="btn btn-dark"
+                ><i class="fas fa-plus"></i> Ajouter une acte immobilier
+              </a>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-sm-12 col-md-6">
+              <div class="dataTables_length" id="tickets-table_length">
+                <label class="d-inline-flex align-items-center"
+                  >Afficher
+                  <select
+                    name="tickets-table_length"
+                    aria-controls="tickets-table"
+                    name="pageSize"
+                    [(ngModel)]="service1.pageSize"
+                    class="form-control form-control-sm mx-2"
+                  >
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                  </select>
+                  entrée</label
+                >
+              </div>
+            </div>
+            <!-- Search -->
+            <div class="col-sm-12 col-md-6">
+              <div
+                id="tickets-table_filter"
+                class="dataTables_filter text-md-end"
+              >
+                <label class="d-inline-flex align-items-center"
+                  >Recherche:
+                  <input
+                    type="text"
+                    name="searchTerm"
+                    class="form-control form-control-sm ms-2"
+                    aria-controls="tickets-table"
+                    [(ngModel)]="service1.searchTerm"
+                /></label>
+              </div>
+            </div>
+            <!-- End search -->
+          </div>
+          <!-- Table -->
+          <div class="table-responsive">
+            <table
+              id="basic-datatable"
+              class="table table-striped table-hover dt-responsive nowrap datatables no-footer dtr-inline"
+            >
+              <thead
+                style="
+                  background-color: #079347;
+                  color: #fff;
+                  text-align: center;
+                "
+              >
+                <tr>
+                  <th sortable="intitule" (sort)="onSort($event)">Intitule</th>
+                  <th sortable="vendeur" (sort)="onSort($event)">Vendeur</th>
+                  <th sortable="acheteur" (sort)="onSort($event)">Acheteur</th>
+                  <th sortable="typeActeImmo" (sort)="onSort($event)">
+                    Type Immo
+                  </th>
+                  <th sortable="mandataire" (sort)="onSort($event)">
+                    Mandataire
+                  </th>
+                  <th sortable="commentaire" (sort)="onSort($event)">
+                    Commentaire
+                  </th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody class="table table-striped table-hover">
+                <tr *ngFor="let immo of acteimmo">
+                  <td>{{ immo.intitule }}</td>
+                  <td>{{ immo.vendeur }}</td>
+                  <td>{{ immo.vendeur }}</td>
+                  <td>{{ immo.typeActeImmo }}</td>
+                  <td>{{ immo.mandataire }}</td>
+                  <td>{{ immo.commentaire }}</td>
+
+                  <td>
+                    <div>
+                      <!--  <td>
+                          <a href class="" href="javascript: void(0);"
+                            ><i
+                              class="bx bxs-plus-square"
+                              style="font-size: 24px; color: #005b8f"
+                            ></i
+                          ></a>
+                        </td> -->
+                      <td>
+                        <a (click)="updateEntrepise(immo.id)"
+                          ><i
+                            class="bx bxs-edit"
+                            style="font-size: 24px; color: #079347"
+                          ></i
+                        ></a>
+                      </td>
+                      <td>
+                        <a (click)="deleteEntreprise(immo.id)"
+                          ><i
+                            class="bx bxs-trash"
+                            style="font-size: 24px; color: #d0342c"
+                          ></i
+                        ></a>
+                      </td>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End table -->
+          <div
+            class="row justify-content-md-between align-items-md-center mt-2"
+          >
+            <div class="col-sm-12 col-md-5">
+              <div
+                class="dataTables_info mb-2"
+                id="tickets-table_info"
+                role="status"
+                aria-live="polite"
+              >
+                Showing {{ service1.startIndex }} to {{ service1.endIndex }} of
+                {{ service1.totalRecords }}
+                entries
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="col-sm-12 col-md-5">
+              <div class="text-md-right float-md-end pagination-rounded">
+                <pagination
+                  [totalItems]="total$ | async"
+                  [(ngModel)]="service1.page"
+                >
+                </pagination>
+              </div>
+            </div>
+            <!-- End Pagination -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
