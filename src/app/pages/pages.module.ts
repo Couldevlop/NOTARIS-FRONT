@@ -38,13 +38,17 @@ import { PhysiqueComponent } from "./clients/physique/form-physique/physique.com
 import { BanqueComponent } from "./clients/banque/form-banque/banque.component";
 import { EntrepriseComponent } from "./clients/entreprise/form-entreprise/entreprise.component";
 
-import { ActeImmobilierComponent } from "./acteimmobilier/acte-immobilier/acte-immobilier.component";
+import { ActeImmobilierComponent } from "./acteimmobilier/form-acte-immobilier/form-acte-immobilier.component";
 import { FicheReceptionComponent } from "./fichereception/fiche-reception/fiche-reception.component";
 import { ListeBanqueComponent } from "./clients/banque/liste-banque/liste-banque.component";
 import { DataService } from "./clients/banque/liste-banque/data.service";
 import { ListePhysiqueComponent } from "./clients/physique/liste-physique/liste-physique.component";
 import { ListeEntrepriseComponent } from "./clients/entreprise/liste-entreprise/liste-entreprise.component";
 import { EditEntrepiseComponent } from "./clients/entreprise/edit-entreprise/edit-entrepise.component";
+import { PaginationModule } from "ngx-bootstrap/pagination";
+import { ListActeimmoComponent } from "./acteimmobilier/list-acteimmo/list-acteimmo.component";
+import { FormDocumentComponent } from './document/form-document/form-document.component';
+import { ListeDocumentComponent } from './document/liste-document/liste-document.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +63,9 @@ import { EditEntrepiseComponent } from "./clients/entreprise/edit-entreprise/edi
     ListePhysiqueComponent,
     ListeEntrepriseComponent,
     EditEntrepiseComponent,
+    ListActeimmoComponent,
+    FormDocumentComponent,
+    ListeDocumentComponent,
   ],
   imports: [
     CommonModule,
@@ -66,6 +73,7 @@ import { EditEntrepiseComponent } from "./clients/entreprise/edit-entreprise/edi
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     PagesRoutingModule,
+    PaginationModule.forRoot(),
     NgApexchartsModule,
     ReactiveFormsModule,
     DashboardsModule,

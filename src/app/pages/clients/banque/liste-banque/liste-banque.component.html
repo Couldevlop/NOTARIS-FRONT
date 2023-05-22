@@ -10,9 +10,18 @@
           <div class="row mb-2">
             <div class="col-sm-12 col-md-6 me-auto"></div>
             <div class="col-sm-12 col-md-3 me-auto"></div>
-            <div class="col-sm-12 col-md mb-3">
+            <div class="col-sm-12 col-md-4" style="margin-left: 900px">
               <a routerLink="/form-banque" class="btn btn-dark"
-                ><i class="fas fa-plus"></i> Ajouter une banque
+                ><i class="fas fa-plus"></i> Ajouter une banque &nbsp; </a
+              >&nbsp;
+
+              <a
+                class="btn btn-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                data-bs-whatever="@fat"
+                (click)="MaryModal(MaryDataModal)"
+                ><i class="fas fa-plus"></i> Ajouter un document &nbsp;
               </a>
             </div>
           </div>
@@ -180,43 +189,43 @@
     </div>
   </div>
 </div>
-<ng-template #content role="document" let-modal>
+<ng-template #MaryDataModal role="document" let-modal>
   <div class="modal-header">
-    <h5 class="modal-title mt-0">Modal Heading</h5>
+    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
     <button
       type="button"
-      class="close"
-      aria-hidden="true"
-      (click)="modal.dismiss('Cross click')"
-    >
-      ×
-    </button>
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    ></button>
   </div>
   <div class="modal-body">
-    <h5>Overflowing text to show scroll behavior</h5>
-    <p>
-      Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus
-      ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur
-      ac, vestibulum at eros.
-    </p>
-    <p>
-      Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-    </p>
-    <p>
-      Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-      magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-      ullamcorper nulla non metus auctor fringilla.
-    </p>
+    <form>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Recipient:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="recipient-name"
+          value="@mdo"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="message-text" class="col-form-label">Message:</label>
+        <textarea class="form-control" id="message-text"></textarea>
+      </div>
+    </form>
   </div>
   <div class="modal-footer">
     <button
       type="button"
-      class="btn btn-light"
+      class="btn btn-secondary"
+      data-bs-dismiss="modal"
       (click)="modal.close('Close click')"
     >
       Close
     </button>
-    <button type="button" class="btn btn-primary">Save changes</button>
+    <button type="button" class="btn btn-primary">Send message</button>
   </div>
 </ng-template>

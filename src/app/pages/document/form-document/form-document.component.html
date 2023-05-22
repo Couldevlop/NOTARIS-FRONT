@@ -1,0 +1,100 @@
+<div class="container-fluid">
+  <!-- start page title -->
+  <app-page-title
+    title="Ajouter un acte immobilier"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title>
+  <!-- end page title -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="mb-4">
+            Les champs avec (<span style="color: red">*</span>) sont
+            obligatoires
+          </h6>
+
+          <div class="row">
+            <div class="col-lg-10" style="margin: auto">
+              <form [formGroup]="formDoc" (ngSubmit)="submit()">
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label
+                      >Acte Immobilier<span style="color: red">*</span></label
+                    >
+                    <input
+                      type="text"
+                      formControlName="acteImmo"
+                      [(ngModel)]="acteimmo.intitule"
+                      class="form-control border border-success"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label
+                      >Type de document <span style="color: red">*</span></label
+                    >
+                    <select
+                      formControlName="typeDoc"
+                      class="form-select border border-success"
+                    >
+                      <option selected>
+                        veuillez sélectionner un acheteur
+                      </option>
+                      <option value="COULIBALY Seydou">COULIBALY Seydou</option>
+                      <option value="OUATTARA Nambelé Yves">
+                        OUATTARA Nambelé Yves
+                      </option>
+                      <option value="SORO PKandotchien">
+                        SORO PKandotchien
+                      </option>
+                      <option value="IRIE BI Archile">IRIE BI Archile</option>
+                      <option value="TOURE Elodie">TOURE Elodie</option>
+                      <option value="KONE Fofana">KONE Fofana</option>
+                      <option value="SEGONGO Issouf">SEGONGO Issouf</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-5 ml-4">
+                    <label>Fichier</label>
+                    <input
+                      type="file"
+                      formControlName="file"
+                      class="form-control border border-success"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label>Initulé <span style="color: red">*</span></label>
+                    <input
+                      type="text"
+                      formControlName="intitule"
+                      class="form-control border border-success"
+                    />
+                  </div>
+                  -
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4 mb-4"></div>
+
+                  <div class="col-md-2 mb-4">
+                    <button type="submit" class="btn btn-success">
+                      Valider
+                    </button>
+                  </div>
+                  <div class="col-md-2 mb-4">
+                    <button type="reset" class="btn btn-outline-secondary">
+                      Annuler
+                    </button>
+                  </div>
+                  <div class="col-md-4 mb-4"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

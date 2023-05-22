@@ -78,10 +78,11 @@ export class ListActeimmoComponent {
     });
   }
 
-  deleteEntreprise(id: number) {
+  deleteActeImmo(id: any) {
     id = Number(id);
     this.service.deleteById(id);
-    console.log("élement supprimer avec succès");
+    console.log("élement supprimer avec succès" + id);
+    this.router.navigate(["liste-acteimmo"]);
   }
 
   changeValue(i) {
@@ -112,5 +113,9 @@ export class ListActeimmoComponent {
     });
     this.service1.sortColumn = column;
     this.service1.sortDirection = direction;
+  }
+
+  addDocument(id: number) {
+    this.router.navigate(["form-document/" + id]);
   }
 }

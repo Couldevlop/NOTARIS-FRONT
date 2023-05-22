@@ -7,8 +7,8 @@ const rotate: { [key: string]: SortDirection } = {
 };
 
 export interface SortEvent {
-  column: string;
-  direction: SortDirection;
+  column?: string;
+  direction?: SortDirection;
 }
 
 @Directive({
@@ -26,7 +26,7 @@ export class AdvancedSortableDirective {
 
   @Input() sortable: string;
   @Input() direction: SortDirection = "";
-  @Output() sort = new EventEmitter<SortEvent>();
+  @Output() sort = new EventEmitter<any>();
 
   rotate() {
     this.direction = rotate[this.direction];

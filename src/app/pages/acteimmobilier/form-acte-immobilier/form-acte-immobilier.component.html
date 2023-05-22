@@ -29,40 +29,48 @@
                   <div class="col-md-6 mb-4">
                     <label>Vendeur <span style="color: red">*</span></label>
                     <select
-                      formControlName="nature"
+                      formControlName="vendeur"
                       class="form-select border border-success"
                     >
                       <option selected>
                         veuillez sélectionner un acheteur
                       </option>
-                      <option value="SA">COULIBALY Seydou</option>
-                      <option value="SARL">OUATTARA Nambelé Yves</option>
-                      <option value="GIE">SORO PKandotchien</option>
-                      <option value="SAS">IRIE BI Archile</option>
-                      <option value="SGI">TOURE Elodie</option>
-                      <option value="EURL">KONE Fofana</option>
-                      <option value="SARLU">SEGONGO Issouf</option>
+                      <option value="COULIBALY Seydou">COULIBALY Seydou</option>
+                      <option value="OUATTARA Nambelé Yves">
+                        OUATTARA Nambelé Yves
+                      </option>
+                      <option value="SORO PKandotchien">
+                        SORO PKandotchien
+                      </option>
+                      <option value="IRIE BI Archile">IRIE BI Archile</option>
+                      <option value="TOURE Elodie">TOURE Elodie</option>
+                      <option value="KONE Fofana">KONE Fofana</option>
+                      <option value="SEGONGO Issouf">SEGONGO Issouf</option>
                     </select>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-6 mb-4">
-                    <label>Acheteur <span style="color: red">*</span></label>
+                    <label>Acquereur <span style="color: red">*</span></label>
                     <select
-                      formControlName="nature"
+                      formControlName="acquereur"
                       class="form-select border border-success"
                     >
                       <option selected>
                         veuillez sélectionner un acheteur
                       </option>
-                      <option value="SA">COULIBALY Seydou</option>
-                      <option value="SARL">OUATTARA Nambelé Yves</option>
-                      <option value="GIE">SORO PKandotchien</option>
-                      <option value="SAS">IRIE BI Archile</option>
-                      <option value="SGI">TOURE Elodie</option>
-                      <option value="EURL">KONE Fofana</option>
-                      <option value="SARLU">SEGONGO Issouf</option>
+                      <option value="COULIBALY Seydou">COULIBALY Seydou</option>
+                      <option value="OUATTARA Nambelé Yves">
+                        OUATTARA Nambelé Yves
+                      </option>
+                      <option value="SORO PKandotchien">
+                        SORO PKandotchien
+                      </option>
+                      <option value="IRIE BI Archile">IRIE BI Archile</option>
+                      <option value="TOURE Elodie">TOURE Elodie</option>
+                      <option value="KONE Fofana">KONE Fofana</option>
+                      <option value="SEGONGO Issouf">SEGONGO Issouf</option>
                     </select>
                   </div>
                   <div class="col-md-6 mb-4">
@@ -70,11 +78,26 @@
                       >Type Acte Immobilier
                       <span style="color: red">*</span></label
                     >
-                    <input
-                      type="text"
+                    <select
                       formControlName="typeActeImmo"
-                      class="form-control border border-success"
-                    />
+                      class="form-select border border-success"
+                    >
+                      <option selected>
+                        veuillez sélectionner un acheteur
+                      </option>
+                      <option value="VENDEUR PERSONNE PHYSIQUE">
+                        VENDEUR PERSONNE PHYSIQUE
+                      </option>
+                      <option value="ACQUEREUR PERSONNE PHYSIQUE">
+                        ACQUEREUR PERSONNE PHYSIQUE
+                      </option>
+                      <option value="VENDEUR PERSONNE MORALE">
+                        VENDEUR PERSONNE MORALE
+                      </option>
+                      <option value="ACQUEREUR PERSONNE MORALE">
+                        ACQUEREUR PERSONNE MORALE
+                      </option>
+                    </select>
                   </div>
                 </div>
 
@@ -83,15 +106,15 @@
                     <label>mandataire</label>
                     <input
                       type="text"
-                      formControlName="dfe"
+                      formControlName="mandataire"
                       class="form-control border border-success"
                     />
                   </div>
                   <div class="col-md-6 mb-4">
                     <label>Commentaire<span style="color: red">*</span></label>
                     <input
-                      type="email"
-                      formControlName="email"
+                      type="text"
+                      formControlName="commentaire"
                       class="form-control border border-success"
                     />
                   </div>

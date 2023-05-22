@@ -97,14 +97,14 @@
 
                   <td>
                     <div>
-                      <!--  <td>
-                          <a href class="" href="javascript: void(0);"
-                            ><i
-                              class="bx bxs-plus-square"
-                              style="font-size: 24px; color: #005b8f"
-                            ></i
-                          ></a>
-                        </td> -->
+                      <td>
+                        <a (click)="addDocument(immo.id)"
+                          ><i
+                            class="bx bx-file"
+                            style="font-size: 24px; color: #005b8f"
+                          ></i
+                        ></a>
+                      </td>
                       <td>
                         <a (click)="updateEntrepise(immo.id)"
                           ><i
@@ -114,7 +114,7 @@
                         ></a>
                       </td>
                       <td>
-                        <a (click)="deleteEntreprise(immo.id)"
+                        <a (click)="deleteActeImmo(immo.id)"
                           ><i
                             class="bx bxs-trash"
                             style="font-size: 24px; color: #d0342c"

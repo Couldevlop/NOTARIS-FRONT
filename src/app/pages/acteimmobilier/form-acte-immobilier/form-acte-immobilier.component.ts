@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { ActeImmoServiceService } from "src/app/services/acte-immo-service.service";
 
 @Component({
   selector: "app-acte-immobilier",
@@ -14,13 +16,17 @@ export class ActeImmobilierComponent implements OnInit {
     typeActeImmo: ["", Validators.required],
     mandataire: ["", Validators.required],
     commentaire: ["", Validators.required],
-    documents: ["", Validators.required],
+    documents: [Validators.required],
   });
 
   // bread crum data
   breadCrumbItems: Array<{}>;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private immoService: ActeImmoServiceService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.breadCrumbItems = [
@@ -29,5 +35,9 @@ export class ActeImmobilierComponent implements OnInit {
     ];
   }
 
-  submit() {}
+  submit() {
+    this.immoService.save(this.formActeImmo.value).subscribe({
+      next: (res) => this.router.navigate(["liste-acteimmo"]),
+    });
+  }
 }

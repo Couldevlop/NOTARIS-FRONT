@@ -26,12 +26,13 @@
                     name="tickets-table_length"
                     aria-controls="tickets-table"
                     name="pageSize"
+                    [(ngModel)]="service1.pageSize"
                     class="form-control form-control-sm mx-2"
                   >
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
                   </select>
                   entrée</label
                 >
@@ -43,16 +44,15 @@
                 id="tickets-table_filter"
                 class="dataTables_filter text-md-end"
               >
-                <label class="d-inline-flex align-items-center">
-                  Recherche:
+                <label class="d-inline-flex align-items-center"
+                  >Recherche:
                   <input
                     type="text"
                     name="searchTerm"
                     class="form-control form-control-sm ms-2"
                     aria-controls="tickets-table"
-                    placeholder=""
-                  />
-                </label>
+                    [(ngModel)]="service1.searchTerm"
+                /></label>
               </div>
             </div>
             <!-- End search -->
@@ -71,14 +71,18 @@
                 "
               >
                 <tr>
-                  <th sortable="sigle">Raison sociale</th>
-                  <th sortable="numRCCM">RCCM</th>
-                  <th sortable="adresse1">Adresse 1</th>
-                  <th sortable="adresse2">Adresse 2</th>
-                  <th sortable="pays">Pays</th>
-                  <th sortable="ville">Ville</th>
-                  <th sortable="ville">DFE</th>
-                  <th sortable="representantLegal">Représentant</th>
+                  <th sortable="raisonSociale" (sort)="onSort($event)">
+                    Raison sociale
+                  </th>
+                  <th sortable="numRCCM" (sort)="onSort($event)">RCCM</th>
+                  <th sortable="adresse1" (sort)="onSort($event)">Adresse 1</th>
+                  <th sortable="adresse2" (sort)="onSort($event)">Adresse 2</th>
+                  <th sortable="pays" (sort)="onSort($event)">Pays</th>
+                  <th sortable="ville" (sort)="onSort($event)">Ville</th>
+                  <th sortable="dfe" (sort)="onSort($event)">DFE</th>
+                  <th sortable="representantLegal" (sort)="onSort($event)">
+                    Représentant
+                  </th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -135,34 +139,19 @@
                 role="status"
                 aria-live="polite"
               >
-                Afficher 1 à 10 sur 60 entrées
+                Showing {{ service1.startIndex }} to {{ service1.endIndex }} of
+                {{ service1.totalRecords }}
+                entries
               </div>
             </div>
             <!-- Pagination -->
             <div class="col-sm-12 col-md-5">
-              <div class="text-md-right float-md-end">
-                <nav aria-label="...">
-                  <ul class="pagination">
-                    <li class="page-item disabled">
-                      <span class="page-link">Précédent</span>
-                    </li>
-                    <li class="page-item active">
-                      <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                      <span class="page-link">
-                        2
-                        <span class="sr-only">(current)</span>
-                      </span>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">Suivant</a>
-                    </li>
-                  </ul>
-                </nav>
+              <div class="text-md-right float-md-end pagination-rounded">
+                <pagination
+                  [totalItems]="total$ | async"
+                  [(ngModel)]="service1.page"
+                >
+                </pagination>
               </div>
             </div>
             <!-- End Pagination -->
@@ -172,43 +161,3 @@
     </div>
   </div>
 </div>
-<ng-template #content role="document" let-modal>
-  <div class="modal-header">
-    <h5 class="modal-title mt-0">Modal Heading</h5>
-    <button
-      type="button"
-      class="close"
-      aria-hidden="true"
-      (click)="modal.dismiss('Cross click')"
-    >
-      ×
-    </button>
-  </div>
-  <div class="modal-body">
-    <h5>Overflowing text to show scroll behavior</h5>
-    <p>
-      Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus
-      ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur
-      ac, vestibulum at eros.
-    </p>
-    <p>
-      Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-    </p>
-    <p>
-      Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-      magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-      ullamcorper nulla non metus auctor fringilla.
-    </p>
-  </div>
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-light"
-      (click)="modal.close('Close click')"
-    >
-      Close
-    </button>
-    <button type="button" class="btn btn-primary">Save changes</button>
-  </div>
-</ng-template>
