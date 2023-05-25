@@ -3,21 +3,21 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  defaultauth: 'fackbackend',
+  production: true,
+  //defaultauth: "fackbackend",
+  defaultauth: "firebase",
   firebaseConfig: {
-    apiKey: '',
-    authDomain: '',
-    databaseURL: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: '',
-    appId: '',
-    measurementId: ''
-  }
+    apiKey: "AIzaSyAuvhSnLjSWDJC5ZzVwfPckphNtL0i3MuA",
+    authDomain: "notaris-af3c1.firebaseapp.com",
+    databaseURL:
+      "https://notaris-af3c1-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "notaris-af3c1",
+    storageBucket: "notaris-af3c1.appspot.com",
+    messagingSenderId: "532734828844",
+    appId: "1:532734828844:web:494ccb40ed233e3f894c89",
+    measurementId: "",
+  },
 };
-
-
 
 /*
  * For easier debugging in development mode, you can import the following file

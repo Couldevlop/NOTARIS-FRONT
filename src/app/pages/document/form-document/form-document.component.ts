@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 import { ActeImmo } from "src/app/models/dossiers/ActeImmo";
@@ -28,6 +28,7 @@ export class FormDocumentComponent implements OnInit {
   file: File;
   id: any;
   acteimmo: ActeImmo;
+  @ViewChild("formDoc") formDocUpdate: FormBuilder;
 
   constructor(
     private fb: FormBuilder,
@@ -58,15 +59,12 @@ export class FormDocumentComponent implements OnInit {
       next: (res) => {
         this.acteimmo = res;
         console.log(this.acteimmo);
+        console.log(this.formDoc);
       },
     });
   }
 
-  /*  updateActeImmo(acteimmo: ActeImmo, doc: File){
-     let document = new Document();
-       document. = this.file.type;
-       document. = this.file.name;
-       document. = this.file.;
-     
-  } */
+  updateActeImmo(acteimmo: ActeImmo, doc: File) {
+    //this.formDoc.setValue({});
+  }
 }
